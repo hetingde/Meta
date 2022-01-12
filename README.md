@@ -3,7 +3,7 @@
 ## Installation / 安装
 
 ```powershell
-scoop bucket add sapps https://github.com/JaimeZeng/scoop-apps
+scoop bucket add sapps https://github.com/Ryanjiena/scoop-apps
 scoop update
 ```
 
