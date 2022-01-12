@@ -1,5 +1,5 @@
 {
-    "version": "8.2.9.2",
+    "version": "8.3.0.1",
     "description": "Office Tool Plus is a powerful tool for deploy Office, Visio and Project. By using Office Tool Plus, you can deploy Office easily.",
     "homepage": "https://otp.landian.vip",
     "license": "GPL-3.0-only",
@@ -9,8 +9,8 @@
         "Quick start: <https://github.com/YerongAI/Office-Tool/wiki>",
         "Documentation: <https://help.coolhub.top>"
     ],
-    "url": "https://github.com/YerongAI/Office-Tool/releases/download/v8.2.9.2/Office_Tool_with_runtime_v8.2.9.2.7z",
-    "hash": "0978c76e5daffb3bab86a8e22350cd79ef6f07c77f338bed3c15e5b3980866ca",
+    "url": "https://github.com/YerongAI/Office-Tool/releases/download/v8.3.0.1/Office_Tool_with_runtime_v8.3.0.1.7z",
+    "hash": "07f4a42db879f699ecc73720250a1d8e3724bce7da052f88d65ed5758e32a498",
     "extract_dir": "Office Tool",
     "shortcuts": [
         [
