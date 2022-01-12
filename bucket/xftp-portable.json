@@ -1,5 +1,5 @@
 {
-    "version": "7.0.0091",
+    "version": "7.0.0094",
     "description": "Effortless File Transfers Over A Network(Portable Edition).",
     "homepage": "https://www.netsarang.com/en/xftp",
     "license": {
@@ -17,8 +17,8 @@
         "4. 去 FlexNet 服务组件效验，无 FlexNet 授权服务后台组件",
         "5. 删除许可管理程序、在线升级程序、多语言模块等文件!"
     ],
-    "url": "https://pan.jiemi.workers.dev/?file=/scoop/Xshell/Xftp_v7.0.0091.7z",
-    "hash": "47aa77302d1c5890cca45eae02bea49a6e52eb477dd740ced396164c8f4d1d34",
+    "url": "https://pan.jiemi.workers.dev/?file=/scoop/Xshell/Xftp_v7.0.0094.7z",
+    "hash": "bcffc440a1f9c895e780d76a61c26acedd2f8d0c4271a606d5bf22558865d770",
     "extract_dir": "Xftp",
     "installer": {
         "script": "Start-Process \"$dir\\!)绿化处理.bat\" -WorkingDirectory \"$dir\" -Verb RunAs"
@@ -42,13 +42,13 @@
         ]
     ],
     "checkver": {
-        "url": "https://raw.githubusercontent.com/JaimeZeng/scoop-apps/main/version/XShell",
+        "url": "https://github.com/JaimeZeng/scoop-apps-version/raw/main/XShell",
         "regex": "(?<filename>Xftp_v(?<version>[\\d.]+)\\.(?:zip|7z))"
     },
     "autoupdate": {
         "url": "https://pan.jiemi.workers.dev/?file=/scoop/XShell/$matchFilename",
         "hash": {
-            "url": "https://raw.githubusercontent.com/JaimeZeng/scoop-apps/main/version/XShell",
+            "url": "https://github.com/JaimeZeng/scoop-apps-version/raw/main/XShell",
             "mode": "extract",
             "regex": "^$sha256([\\s]+)$basename"
         }
