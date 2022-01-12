@@ -1,5 +1,5 @@
 {
-    "version": "7.0.0093",
+    "version": "7.0.0096",
     "description": "The Industry's Most Powerful SSH Client(Portable Edition).",
     "homepage": "https://www.netsarang.com/en/xshell",
     "license": {
@@ -17,8 +17,8 @@
         "4. 去 FlexNet 服务组件效验，无 FlexNet 授权服务后台组件",
         "5. 删除许可管理程序、在线升级程序、多语言模块等文件!"
     ],
-    "url": "https://pan.jiemi.workers.dev/?file=/scoop/Xshell/Xshell_v7.0.0093.7z",
-    "hash": "5e80db0db4b812d88287230f91e41a5cea7c523bbf5f8e19da9e2d1b0c53d831",
+    "url": "https://pan.jiemi.workers.dev/?file=/scoop/Xshell/Xshell_v7.0.0096.7z",
+    "hash": "202fc51b0ca81af7b0345cc061478ac82d36eaf5619e4a142ee8d592b393868d",
     "extract_dir": "Xshell",
     "installer": {
         "script": "Start-Process \"$dir\\!)绿化处理.bat\" -WorkingDirectory \"$dir\" -Verb RunAs"
@@ -42,13 +42,13 @@
         ]
     ],
     "checkver": {
-        "url": "https://raw.githubusercontent.com/JaimeZeng/scoop-apps/main/version/XShell",
+        "url": "https://github.com/JaimeZeng/scoop-apps-version/raw/main/XShell",
         "regex": "(?<filename>Xshell_v(?<version>[\\d.]+)\\.(?:zip|7z))"
     },
     "autoupdate": {
         "url": "https://pan.jiemi.workers.dev/?file=/scoop/XShell/$matchFilename",
         "hash": {
-            "url": "https://raw.githubusercontent.com/JaimeZeng/scoop-apps/main/version/XShell",
+            "url": "https://github.com/JaimeZeng/scoop-apps-version/raw/main/XShell",
             "mode": "extract",
             "regex": "^$sha256([\\s]+)$basename"
         }
