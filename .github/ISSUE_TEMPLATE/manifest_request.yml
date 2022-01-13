@@ -10,6 +10,17 @@ body:
     attributes:
       value: |
         Thanks for taking the time to submit you issue using the following template!
+        By opening this issue you confirm that you have searched for similar issues/PRs here already.
+        Failing to do so will most likely result in closing of this issue without any explanation.
+        Incomplete form details below might also result in closing of the issue.
+  - type: input
+    id: name
+    attributes:
+      label: Package Name
+      description: "name of new package."
+      placeholder: ex. git
+    validations:
+      required: true
   - type: input
     id: version
     attributes:
@@ -78,6 +89,24 @@ body:
       placeholder: Yes/No
     validations:
       required: true
+  - type: input
+    id: popularity
+    attributes:
+      label: Some indication of popularity/repute
+      description: "GitHub stars/software reviews etc."
+    validations:
+      required: true
+  - type: textarea
+    id: download-links
+    attributes:
+      label: Download link(s)
+      description: "URL(s)/link(s)."
+      placeholder: |
+        https://
+        ...
+      render: powershell
+    validations:
+      required: true
   - type: textarea
     id: more-info
     attributes:
@@ -88,5 +117,6 @@ body:
           - Files, folders to persist across updates.
           - Installation requirements.
           - ...
+      render: powershell
     validations:
       required: false
