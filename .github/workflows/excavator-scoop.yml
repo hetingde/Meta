@@ -14,6 +14,6 @@ jobs:
       - name: Excavator
         uses: ScoopInstaller/Scoop-GithubActions@main
         env:
-          GITH_EMAIL: zxj@outlook.sg
+          USER_EMAIL: zxj@outlook.sg
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
           SKIP_UPDATED: "1"
