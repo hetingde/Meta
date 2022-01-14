@@ -54,6 +54,7 @@ body:
     attributes:
       label: Possible Solution
       description: "Only if you have suggestions on a fix for the bug."
+      render: powershell
     validations:
       required: false
   - type: dropdown
