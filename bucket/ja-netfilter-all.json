@@ -8,10 +8,10 @@
     "hash": "130de19e31c14604f9e0336b581ccb960cdbb6720697a525c03aae1ef19e471d",
     "extract_dir": "ja-netfilter-all",
     "pre_install": [
-        "Set-Content \"$dir\\ja-netfilter-all-install-current-user.ps1\" @('Set-Location $env:SCOOP_APPS/ja-netfilter-all/current/scripts/', 'Start-Process -FilePath install-current-user.vbs -Wait') -Encoding Ascii",
-        "Set-Content \"$dir\\ja-netfilter-all-install-all-users.ps1\" @('Set-Location $env:SCOOP_APPS/ja-netfilter-all/current/scripts/', 'Start-Process -FilePath install-all-users.vbs -Wait') -Encoding Ascii",
-        "Set-Content \"$dir\\ja-netfilter-all-uninstall-current-user.ps1\" @('Set-Location $env:SCOOP_APPS/ja-netfilter-all/current/scripts/', 'Start-Process -FilePath uninstall-current-user.vbs -Wait') -Encoding Ascii",
-        "Set-Content \"$dir\\ja-netfilter-all-uninstall-all-users.ps1\" @('Set-Location $env:SCOOP_APPS/ja-netfilter-all/current/scripts/', 'Start-Process -FilePath uninstall-all-users.vbs -Wait') -Encoding Ascii"
+        "Set-Content \"$dir\\ja-netfilter-all-install-current-user.ps1\" @('if (-not $env:SCOOP_APPS) { $env:SCOOP_APPS = \"$env:SCOOP\\apps\" }', 'Set-Location $env:SCOOP_APPS/ja-netfilter-all/current/scripts/', 'Start-Process -FilePath install-current-user.vbs -Wait') -Encoding Ascii",
+        "Set-Content \"$dir\\ja-netfilter-all-install-all-users.ps1\" @('if (-not $env:SCOOP_APPS) { $env:SCOOP_APPS = \"$env:SCOOP\\apps\" }', 'Set-Location $env:SCOOP_APPS/ja-netfilter-all/current/scripts/', 'Start-Process -FilePath install-all-users.vbs -Wait') -Encoding Ascii",
+        "Set-Content \"$dir\\ja-netfilter-all-uninstall-current-user.ps1\" @('if (-not $env:SCOOP_APPS) { $env:SCOOP_APPS = \"$env:SCOOP\\apps\" }', 'Set-Location $env:SCOOP_APPS/ja-netfilter-all/current/scripts/', 'Start-Process -FilePath uninstall-current-user.vbs -Wait') -Encoding Ascii",
+        "Set-Content \"$dir\\ja-netfilter-all-uninstall-all-users.ps1\" @('if (-not $env:SCOOP_APPS) { $env:SCOOP_APPS = \"$env:SCOOP\\apps\" }', 'Set-Location $env:SCOOP_APPS/ja-netfilter-all/current/scripts/', 'Start-Process -FilePath uninstall-all-users.vbs -Wait') -Encoding Ascii"
     ],
     "bin": [
         "ja-netfilter-all-install-current-user.ps1",
