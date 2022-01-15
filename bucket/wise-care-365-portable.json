@@ -6,18 +6,13 @@
         "identifier": "Freeware",
         "url": "https://www.wisecleaner.com/eula.html"
     },
-    "depends": "sudo",
     "url": "https://pan.jiemi.workers.dev/?file=/scoop/CCleaner/WiseCare365_6.1.4.601_Green.7z",
     "hash": "f0d9540a44360137e8ebacbefb7212474397011630b7cc112648d993a585896b",
     "extract_dir": "WiseCare365_6.1.4.601_Green",
     "uninstaller": {
-        "script": "sudo Start-Process -filepath \"$dir\\移除残留.bat\" -Wait -Verb RunAs"
+        "script": "Start-Process -filepath \"$dir\\移除残留.bat\" -Wait -Verb RunAs"
     },
-    "bin": [
-        [
-            "WiseCare365.exe"
-        ]
-    ],
+    "bin": "WiseCare365.exe",
     "shortcuts": [
         [
             "WiseCare365.exe",
