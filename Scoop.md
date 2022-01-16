@@ -2,14 +2,14 @@
 
 [![https://github.com/lukesampson/scoop](https://github-readme-stats.vercel.app/api/pin/?username=lukesampson&repo=scoop&show_owner=true&theme=dracula)](https://github.com/lukesampson/scoop)
 
-> 官方文档：[lukesampson/scoop Wiki · GitHub](https://github.com/lukesampson/scoop/wiki#documentation)
+> 官方文档: [lukesampson/scoop Wiki · GitHub](https://github.com/lukesampson/scoop/wiki#documentation)
 
 Scoop 是一个 Win­dows 包管理工具(类似于 [Yum](http://yum.baseurl.org/index.html) 、[Homebrew](http://mxcl.github.io/homebrew/))。
 
-使用 Scoop 来安装和管理我们的软件：
+使用 Scoop 来安装和管理我们的软件:
 
--   集搜索、下载、安装、更新软件于一体：极大的降低了安装维护一个软件的成本，我们甚至不必在软件本身的复杂菜单中寻找那个更新按钮来更新软件自己
--   将软件干干净净的安装到电脑的「用户文件夹」下：这样既不会污染路径也不会请求不必要的权限（UAC）
+-   集搜索、下载、安装、更新软件于一体: 极大的降低了安装维护一个软件的成本，我们甚至不必在软件本身的复杂菜单中寻找那个更新按钮来更新软件自己
+-   将软件干干净净的安装到电脑的「用户文件夹」下: 这样既不会污染路径也不会请求不必要的权限（UAC）
 -   自动配置环境变量
 -   在卸载软件的时候，能够尽量清空软件在电脑上存储的任何数据和痕迹
 
