@@ -29,6 +29,6 @@
         "github": "https://github.com/dream7180/foobox-en"
     },
     "autoupdate": {
-        "url": "https://github.com/dream7180/foobox-en/releases/download/$version/foobox-$version.7z"
+        "url": "https://github.com/dream7180/foobox-en/releases/download/$version/foobox-$version-std.7z"
     }
 }
