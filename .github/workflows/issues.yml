@@ -1,0 +1,17 @@
+#.github\workflows\issues.yml
+on:
+  issues:
+    types: [opened, labeled]
+name: Issue
+jobs:
+  issueHandler:
+    name: Issue Handler
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@main
+      - name: Issue Handler
+        uses: ScoopInstaller/Scoop-GithubActions@main
+        if: github.event.action == 'opened' || (github.event.action == 'labeled' && contains(github.event.issue.labels.*.name, 'verify'))
+        env:
+          USER_EMAIL: zxj@outlook.sg
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
