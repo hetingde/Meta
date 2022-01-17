@@ -1,0 +1,17 @@
+#.github\workflows\issue_commented.yml
+on:
+  issue_comment:
+    types: [created]
+name: Commented Pull Request
+jobs:
+  pullRequestHandler:
+    name: Pull Request Validator
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@main
+      - name: Pull Request Validator
+        uses: ScoopInstaller/Scoop-GithubActions@main
+        if: startsWith(github.event.comment.body, '/verify')
+        env:
+          USER_EMAIL: 78083448+JaimeZeng@users.noreply.github.com
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
