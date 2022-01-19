@@ -1,18 +1,16 @@
 on:
-  workflow_dispatch:
-  schedule:
-    # run every 8 hours
-    - cron: '20 */8 * * *'
-name: Excavator
+  issue_comment:
+    types: [created]
+name: Commented Pull Request
 jobs:
-  excavate:
-    name: Excavate
+  pullRequestHandler:
+    name: PullRequestHandler
     runs-on: windows-latest
     steps:
       - uses: actions/checkout@main
-      - name: Excavate
+      - name: PullRequestHandler
         uses: ScoopInstaller/GithubActions@main
+        if: startsWith(github.event.comment.body, '/verify')
         env:
           USER_EMAIL: 78083448+JaimeZeng@users.noreply.github.com
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
-          SKIP_UPDATED: '1'
