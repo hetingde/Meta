@@ -2,7 +2,7 @@ name: Check
 
 on:
   schedule:
-    - cron: "5 23 * * *"
+    - cron: "5 11,23 * * *"
   workflow_dispatch:
 
 jobs:
@@ -14,7 +14,7 @@ jobs:
         with:
           ref: version
       - name: Install Dependence
-        run: sudo apt install curl jq xxd -y
+        run: sudo apt install curl jq xxd libxml2-utils -y
       - name: Check
         run: bash check.sh
       - name: Commit
