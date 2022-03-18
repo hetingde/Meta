@@ -19,6 +19,7 @@ jobs:
 
           wget --user-agent="${userAgent}" --no-check-certificate -O "idm" "https://pan.jiemi.workers.dev/?file=/scoop/IDM/sha256sum"
           wget --user-agent="${userAgent}" --no-check-certificate -O "potplayer" "https://pan.jiemi.workers.dev/?file=/scoop/PotPlayer/sha256sum"
+          wget --user-agent="${userAgent}" --no-check-certificate -O "bcompare" "https://pan.jiemi.workers.dev/?file=/scoop/BCompare/sha256sum"
 
       - name: Commit
         run: |
