@@ -1,0 +1,33 @@
+name: CheckVer
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          ref: version
+      - name: CheckVer
+        run: |
+          DATE="$(echo $(TZ=UTC date '+%Y-%m-%d %H:%M:%S'))"
+          tmpFile="./action.tmp"
+          userAgent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.93 Safari/537.36"
+
+          wget --user-agent="${userAgent}" --no-check-certificate -O "idm" "https://pan.jiemi.workers.dev/?file=/scoop/IDM/sha256sum"
+          wget --user-agent="${userAgent}" --no-check-certificate -O "potplayer" "https://pan.jiemi.workers.dev/?file=/scoop/PotPlayer/sha256sum"
+
+      - name: Commit
+        run: |
+          git config --local user.email "78083448+JaimeZeng@users.noreply.github.com"
+          git config --local user.name "JaimeZeng"
+          git add .
+          git commit -m "update" -a
+      - name: Push changes
+        uses: ad-m/github-push-action@master
+        with:
+          branch: version
+          github_token: ${{ secrets.GH_TOKEN }}
