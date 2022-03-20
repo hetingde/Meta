@@ -1,5 +1,5 @@
 {
-    "version": "7.0.0096",
+    "version": "7.0.0090",
     "description": "The Industry's Most Powerful SSH Client(Portable Edition).",
     "homepage": "https://www.netsarang.com/en/xshell",
     "license": {
@@ -17,8 +17,8 @@
         "4. 去 FlexNet 服务组件效验，无 FlexNet 授权服务后台组件",
         "5. 删除许可管理程序、在线升级程序、多语言模块等文件!"
     ],
-    "url": "https://pan.jiemi.workers.dev/?file=/scoop/Xshell/Xshell_v7.0.0096.7z",
-    "hash": "202fc51b0ca81af7b0345cc061478ac82d36eaf5619e4a142ee8d592b393868d",
+    "url": "https://pan.jiemi.workers.dev/?file=/scoop/XShell/Xshell_v7.0.0090.7z",
+    "hash": "9833f61d2591d56cf11be0fe139aa1b76797879de48bc708ab0c6954f2e04d16",
     "extract_dir": "Xshell",
     "installer": {
         "script": "Start-Process \"$dir\\!)绿化处理.bat\" -WorkingDirectory \"$dir\" -Verb RunAs"
