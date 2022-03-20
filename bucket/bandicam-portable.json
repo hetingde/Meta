@@ -20,8 +20,12 @@
         "",
         "最新版下载地址: <https://www.423down.com/2119.html>"
     ],
-    "url": "https://pan.jiemi.workers.dev/?file=/scoop/Bandicam/Bandicam_v5.4.0.1907_x64.7z",
-    "hash": "9f048f0397ba0e2c3e21f1b7bd0e86bc5392a9db2d725c791667e91f3e7b0f93",
+    "architecture": {
+        "64bit": {
+            "url": "https://pan.jiemi.workers.dev/?file=/scoop/Bandicam/Bandicam_v5.4.0.1907_x64.7z",
+            "hash": "9f048f0397ba0e2c3e21f1b7bd0e86bc5392a9db2d725c791667e91f3e7b0f93"
+        }
+    },
     "extract_dir": "Bandicam",
     "bin": "BandicamPortable.exe",
     "shortcuts": [
@@ -36,11 +40,15 @@
         "reverse": true
     },
     "autoupdate": {
-        "url": "https://pan.jiemi.workers.dev/?file=/scoop/Bandicam/$matchFilename",
-        "hash": {
-            "url": "https://github.com/Ryanjiena/scoop-apps/raw/version/bandicam",
-            "mode": "extract",
-            "regex": "^$sha256([\\s]+)$basename"
+        "architecture": {
+            "64bit": {
+                "url": "https://pan.jiemi.workers.dev/?file=/scoop/Bandicam/$matchFilename",
+                "hash": {
+                    "url": "https://github.com/Ryanjiena/scoop-apps/raw/version/bandicam",
+                    "mode": "extract",
+                    "regex": "^$sha256([\\s]+)$basename"
+                }
+            }
         }
     }
 }
