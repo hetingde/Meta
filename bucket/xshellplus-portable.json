@@ -21,8 +21,7 @@
     "hash": "fb802e6d24f5e4c226d9f124d53f3753b2fe6f490c026981be970c9f3bd032d7",
     "extract_dir": "XshellPlus",
     "installer": {
-        "file": "!)绿化处理.bat",
-        "keep": true
+        "script": "Start-Process \"$dir\\!)绿化处理.bat\" -WorkingDirectory \"$dir\"  -Wait -Verb RunAs"
     },
     "uninstaller": {
         "script": [
