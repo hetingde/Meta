@@ -1,11 +1,11 @@
 {
-    "version": "69d9b13b",
+    "version": "fdfe73ea",
     "description": "ja-netfilter all in one",
     "homepage": "https://jetbra.in/s",
     "license": "GPL-3.0-only",
     "notes": "Configure as described in readme.txt! For testing purposes only, not for commercial use!",
-    "url": "https://pan.jiemi.workers.dev/?file=/scoop/patch/ja-netfilter-all-69d9b13b2d821bb900848b4cd9216b2b2c11bfd9.zip",
-    "hash": "3beaab91d767a9c7971a13afa6fe52a3b9949a879904430922096c8b242e614d",
+    "url": "https://pan.jiemi.workers.dev/?file=/scoop/patch/ja-netfilter-all-fdfe73eaad926391cedbf0689809ecacdbcced5c.zip",
+    "hash": "9cdc4cd07cdcc54a78a8cfa9f2e35330271196ef7e83d1bd65738ebf821b0703",
     "extract_dir": "ja-netfilter-all",
     "pre_install": [
         "Set-Content \"$dir\\ja-netfilter-all-install-current-user.ps1\" @('if (-not $env:SCOOP_APPS) { $env:SCOOP_APPS = \"$env:SCOOP\\apps\" }', 'Set-Location $env:SCOOP_APPS/ja-netfilter-all/current/scripts/', 'Start-Process -FilePath install-current-user.vbs -Wait') -Encoding Ascii",
