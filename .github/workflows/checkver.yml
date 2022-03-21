@@ -24,6 +24,7 @@ jobs:
           wget --user-agent="${userAgent}" --no-check-certificate -O "music" "https://pan.jiemi.workers.dev/?file=/scoop/Music/sha256sum"
           wget --user-agent="${userAgent}" --no-check-certificate -O "patch" "https://pan.jiemi.workers.dev/?file=/scoop/patch/sha256sum"
           wget --user-agent="${userAgent}" --no-check-certificate -O "potplayer" "https://pan.jiemi.workers.dev/?file=/scoop/PotPlayer/sha256sum"
+          wget --user-agent="${userAgent}" --no-check-certificate -O "qq" "https://pan.jiemi.workers.dev/?file=/scoop/QQ/sha256sum"
           wget --user-agent="${userAgent}" --no-check-certificate -O "vcredist" "https://pan.jiemi.workers.dev/?file=/scoop/vcredist/sha256sum"
           wget --user-agent="${userAgent}" --no-check-certificate -O "xshell" "https://pan.jiemi.workers.dev/?file=/scoop/Xshell/sha256sum"
 
