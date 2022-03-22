@@ -20,5 +20,11 @@
         "**/CVS": true,
         "**/.DS_Store": true,
         "**/tmp": true
-    }
+    },
+    "git.showPushSuccessNotification": true,
+    "prettier.embeddedLanguageFormatting": "off",
+    "prettier.printWidth": 120,
+    "git.enableSmartCommit": true,
+    "files.autoSave": "onFocusChange",
+    "editor.minimap.enabled": false
 }
