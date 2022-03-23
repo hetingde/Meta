@@ -25,13 +25,13 @@ jobs:
 
           cp -f v2raya-scoop/bucket/*.json bucket/
           cp -f Scoop-JetBrains/bucket/*.json bucket/
-          cp -f Scoop-JetBrains/scripts/*.json scripts/
+          cp -f Scoop-JetBrains/scripts/* scripts/
 
           rm -rf v2raya-scoop/ Scoop-JetBrains/
       - name: Commit
         run: |
           git add .
-          git commit -m "update"
+          git commit -m "Sync Bucket"
       - name: Push changes
         uses: ad-m/github-push-action@master
         with:
