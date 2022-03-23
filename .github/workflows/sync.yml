@@ -1,0 +1,40 @@
+name: Sync
+
+on:
+  schedule:
+    - cron: "0 11,23 * * *"
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Sync
+        run: |
+          cur_dir="$(cd `dirname $0`; pwd)"
+
+          git config --local user.email "78083448+JaimeZeng@users.noreply.github.com"
+          git config --local user.name "JaimeZeng"
+          git clone --depth=1 https://github.com/Ash258/Scoop-JetBrains.git
+          git clone --depth=1 https://github.com/v2rayA/v2raya-scoop.git
+
+          cd ${cur_dir}/Scoop-JetBrains/bucket
+          ls | grep -E "RC|EAP" | grep -v "Toolbox" | xargs -t -i rm -f {}
+
+          cd ${cur_dir}
+
+          cp -f ${cur_dir}/v2raya-scoop/bucket/*.json ${cur_dir}/bucket/
+          cp -f ${cur_dir}/Scoop-JetBrains/bucket/*.json ${cur_dir}/bucket/
+          cp -f ${cur_dir}/Scoop-JetBrains/scripts/*.json ${cur_dir}/scripts/
+
+          rm -rf v2raya-scoop/ Scoop-JetBrains/
+      - name: Commit
+        run: |
+          git add .
+          git commit -m "update"
+      - name: Push changes
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GH_TOKEN }}
