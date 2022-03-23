@@ -14,23 +14,18 @@ jobs:
       - name: Sync
         run: |
           set -euxo pipefail
-          cur_dir="$(cd `dirname $0`; pwd)"
-          pwd
-          echo "$cur_dir"
-          ls -la
           git config --local user.email "78083448+JaimeZeng@users.noreply.github.com"
           git config --local user.name "JaimeZeng"
           git clone --depth=1 https://github.com/Ash258/Scoop-JetBrains.git
           git clone --depth=1 https://github.com/v2rayA/v2raya-scoop.git
 
-          cd ${cur_dir}/Scoop-JetBrains/bucket
+          cd Scoop-JetBrains/bucket
           ls | grep -E "RC|EAP" | grep -v "Toolbox" | xargs -t -i rm -f {}
+          cd ../../
 
-          cd ${cur_dir}
-
-          cp -f ${cur_dir}/v2raya-scoop/bucket/*.json ${cur_dir}/bucket/
-          cp -f ${cur_dir}/Scoop-JetBrains/bucket/*.json ${cur_dir}/bucket/
-          cp -f ${cur_dir}/Scoop-JetBrains/scripts/*.json ${cur_dir}/scripts/
+          cp -f v2raya-scoop/bucket/*.json bucket/
+          cp -f Scoop-JetBrains/bucket/*.json bucket/
+          cp -f Scoop-JetBrains/scripts/*.json scripts/
 
           rm -rf v2raya-scoop/ Scoop-JetBrains/
       - name: Commit
