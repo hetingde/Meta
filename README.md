@@ -22,3 +22,6 @@ Install apps from this bucket with:
 ```powershell
 scoop install sapps/<app_name>
 ```
+
+<!--ts-->
+<!--te-->
