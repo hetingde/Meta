@@ -34,7 +34,7 @@ function table_generator() {
     # manifest_table_body=$(find . -name '*.json' -printf "'%f'\n" | xargs -I {} bash -c 'manifest_info_generator "$@"' {})
     manifest_table_body=""
     manifest_table_footer="\n\n\n*Updated by: ${commiter}, at: ${DATE}*"
-    for manifest in $(find . -name '*.json'); do
+    for manifest in $(find . -name '*.json' | sort); do
         manifest_table_body="${manifest_table_body}$(manifest_info_generator "${manifest}")"
     done
     echo -e "${manifest_table_header}${manifest_table_body}${manifest_table_footer}"
