@@ -23,6 +23,11 @@ Install apps from this bucket with:
 scoop install sapps/<app_name>
 ```
 
+---
+
+<details>
+<summary>Manifests</summary>
+
 <!--ts-->
 | Name | Version | Commit | Description |
 |:---|:---|:---|:---|
@@ -219,3 +224,5 @@ scoop install sapps/<app_name>
 
 *Updated by: , at: 2022-03-30 23:47:45*
 <!--te-->
+
+</details>
