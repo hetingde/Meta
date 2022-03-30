@@ -1,0 +1,26 @@
+name: Toc
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "30 */8 * * *"
+jobs:
+  toc:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Update package manager database
+        run: sudo apt-get update
+      - name: Install Dependence
+        run: sudo apt-get install curl jq
+      - name: Generate TOC
+        run: sed -i 's/\r$//' toc.sh && bash toc.sh
+      - name: Commit
+        run: |
+          git config --local user.email "78083448+JaimeZeng@users.noreply.github.com"
+          git config --local user.name "JaimeZeng"
+          git add .
+          git commit -m "update" -a
+      - name: Push changes
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GH_TOKEN }}

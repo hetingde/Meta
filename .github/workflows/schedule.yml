@@ -52,26 +52,3 @@ jobs:
           USER_EMAIL: 78083448+JaimeZeng@users.noreply.github.com
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
           SKIP_UPDATED: "1"
-  toc:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-        with:
-          ref: master
-      - name: Update package manager database
-        run: sudo apt-get update
-      - name: Install Dependence
-        run: sudo apt-get install curl jq
-      - name: Generate TOC
-        run: bash toc.sh
-      - name: Commit
-        run: |
-          git config --local user.email "78083448+JaimeZeng@users.noreply.github.com"
-          git config --local user.name "JaimeZeng"
-          git add .
-          git commit -m "update" -a
-      - name: Push changes
-        uses: ad-m/github-push-action@master
-        with:
-          branch: master
-          github_token: ${{ secrets.GH_TOKEN }}
