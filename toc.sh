@@ -1,7 +1,5 @@
 #!/usr/bin/env bash
-PATH=/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:~/bin
-export PATH
-# set -exuo pipefail
+# set -euxo pipefail
 
 current_dir=$(cd -P -- "$(dirname -- "$0")" && pwd -P)
 DATE=$(TZ=UTC-8 date '+%Y-%m-%d %H:%M:%S')
