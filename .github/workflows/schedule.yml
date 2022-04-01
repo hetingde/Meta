@@ -5,6 +5,7 @@ on:
     - cron: "20 */8 * * *"
 jobs:
   checkver:
+    name: CheckVer
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -14,6 +15,10 @@ jobs:
         run: sudo apt-get update
       - name: Install Dependence
         run: sudo apt-get install curl jq xxd libxml2-utils
+      - name: Git config
+        run: |
+          git config --local user.email "78083448+JaimeZeng@users.noreply.github.com"
+          git config --local user.name "JaimeZeng"
       - name: Check
         run: bash check.sh
       - name: CheckVer
@@ -32,10 +37,8 @@ jobs:
           wget --user-agent="${userAgent}" --no-check-certificate -O "xshell" "https://pan.jiemi.workers.dev/?file=/scoop/Xshell/sha256sum"
       - name: Commit
         run: |
-          git config --local user.email "78083448+JaimeZeng@users.noreply.github.com"
-          git config --local user.name "JaimeZeng"
           git add .
-          git commit -m "update" -a
+          git commit -m "checkver"
       - name: Push changes
         uses: ad-m/github-push-action@master
         with:
@@ -45,10 +48,65 @@ jobs:
     name: Excavate
     runs-on: windows-latest
     steps:
-      - uses: actions/checkout@main
+      - uses: actions/checkout@v3
       - name: Excavate
         uses: ScoopInstaller/GithubActions@main
         env:
           USER_EMAIL: 78083448+JaimeZeng@users.noreply.github.com
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
           SKIP_UPDATED: "1"
+  toc:
+    name: TOC
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      - name: Update package manager database
+        run: sudo apt-get update
+      - name: Install Dependence
+        run: sudo apt-get install curl jq
+      - name: Git config
+        run: |
+          git config --local user.email "78083448+JaimeZeng@users.noreply.github.com"
+          git config --local user.name "JaimeZeng"
+      - name: Generate TOC
+        run: sed -i 's/\r$//' toc.sh && bash toc.sh
+      - name: Commit
+        run: |
+          git add .
+          git commit -m "update README.md" -a
+      - name: Push changes
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GH_TOKEN }}
+  sync:
+    name: Sync
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      - name: Import ssh private key
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.SSH_KEY }}" | sed 's/\\n/\n/g > ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
+      - name: Git config
+        run: |
+          git config --local user.email "78083448+JaimeZeng@users.noreply.github.com"
+          git config --local user.name "JaimeZeng"
+      - name: Replace manifest
+        run: |
+          cd bucket/
+          find . -name '*.json' -printf "'%f'\n" | xargs -i sed -i 's|\(https://github.com/.*/releases/download\)|https://github.do/\1|g;s|\(https://raw.githubusercontent.com/\)|https://github.do/\1|g' {}
+      - name: Commit changes
+        run: |
+          git add .
+          git commit -m "Sync"
+      - name: Sync
+        run: |
+          git remote add destination "${{ secrets.DESTINATION_REPO }}"
+          git push destination master --force
+      - name: Remove ssh private key
+        run: rm -f ~/.ssh/id_rsa
