@@ -89,9 +89,11 @@ jobs:
           fetch-depth: 0
       - name: Import ssh private key
         run: |
+          mkdir -p /root/.ssh
+          echo "${{ secrets.SSH_KEY }}" | sed 's/\\n/\n/g' >/root/.ssh/id_rsa
+          chmod 600 /root/.ssh/id_rsa
           mkdir -p ~/.ssh
-          echo "${{ secrets.SSH_KEY }}" | sed 's/\\n/\n/g' > ~/.ssh/id_rsa
-          chmod 600 ~/.ssh/id_rsa
+          cp -f /root/.ssh/* ~/.ssh/ 2>/dev/null || true
       - name: Git config
         run: |
           git config --local user.email "78083448+JaimeZeng@users.noreply.github.com"
@@ -106,7 +108,8 @@ jobs:
           git commit -m "Sync"
       - name: Sync
         run: |
-          git remote add destination "${{ secrets.DESTINATION_REPO }}"
-          git push destination master --force
+          git config --local core.sshCommand "/usr/bin/ssh -i ~/.ssh/id_rsa"
+          git remote add origin git@e.coding.net:ryanjie/scoop/scoop-apps.git
+          git push -u origin master -f
       - name: Remove ssh private key
         run: rm -f ~/.ssh/id_rsa
