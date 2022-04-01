@@ -89,11 +89,11 @@ jobs:
           fetch-depth: 0
       - name: Import ssh private key
         run: |
-          mkdir -p /root/.ssh
-          echo "${{ secrets.SSH_KEY }}" | sed 's/\\n/\n/g' >/root/.ssh/id_rsa
-          chmod 600 /root/.ssh/id_rsa
-          mkdir -p ~/.ssh
-          cp -f /root/.ssh/* ~/.ssh/ 2>/dev/null || true
+          sudo mkdir -p /root/.ssh
+          sudo echo "${{ secrets.SSH_KEY }}" | sed 's/\\n/\n/g' >/root/.ssh/id_rsa
+          sudo chmod 600 /root/.ssh/id_rsa
+          sudo mkdir -p ~/.ssh
+          sudo cp -f /root/.ssh/* ~/.ssh/ 2>/dev/null || true
       - name: Git config
         run: |
           git config --local user.email "78083448+JaimeZeng@users.noreply.github.com"
