@@ -1,8 +1,8 @@
 ## Scoop 介绍
 
-[![https://github.com/lukesampson/scoop](https://github-readme-stats.vercel.app/api/pin/?username=lukesampson&repo=scoop&show_owner=true&theme=dracula)](https://github.com/lukesampson/scoop)
+[![ScoopInstaller/Scoop](https://github-readme-stats.vercel.app/api/pin/?username=ScoopInstaller&repo=Scoop&show_owner=true&theme=dracula)](https://github.com/ScoopInstaller/Scoop)
 
-> 官方文档: [lukesampson/scoop Wiki · GitHub](https://github.com/lukesampson/scoop/wiki#documentation)
+> 官方文档: [ScoopInstaller/scoop Wiki · GitHub](https://github.com/ScoopInstaller/Scoop/wiki#documentation)
 
 Scoop 是一个 Win­dows 包管理工具(类似于 [Yum](http://yum.baseurl.org/index.html) 、[Homebrew](http://mxcl.github.io/homebrew/))。
 
@@ -34,7 +34,6 @@ $env:SCOOP='D:\Applications\Scoop'
 
 ```powershell
 Invoke-Expression (New-Object System.Net.WebClient).DownloadString('https://get.scoop.sh')
-
 # or shorter
 iwr -useb get.scoop.sh | iex
 ```
@@ -58,23 +57,23 @@ scoop config aria2-min-split-size 4M
 ## 搜索软件
 
 ```powershell
-scoop search <app_name>
+scoop search <app>
 # or
 scoop install scoop-search
-scoop-search <app_name>
+scoop-search <app>
 ```
 
 ## 查看软件信息
 
-`scoop info <app_name>`
+`scoop info <app>`
 
 ## 安装应用
 
-`scoop install <app_name>`
+`scoop install <app>`
 
 ## 卸载应用
 
-`scoop uninstall <app_name>`
+`scoop uninstall <app>`
 
 ## 查看应用状态
 
@@ -85,7 +84,7 @@ scoop-search <app_name>
 ```powershell
 scoop update
 scoop status
-scoop update <app_name>
+scoop update <app>
 # or
 scoop update *
 ```
@@ -93,56 +92,18 @@ scoop update *
 ## 禁止应用更新
 
 ```powershell
-scoop hold <app_name>
+scoop hold <app>
 # disable
-scoop unhold <app_name>
+scoop unhold <app>
 ```
 
 ## 切换软件保本
 
-`scoop reset <app_name>`
+`scoop reset <app>`
 
 ## 查看已安装软件列表
 
 `scoop list`
-
-## 导出应用列表
-
-```powershell
-function export-scoop {
-    param (
-        [parameter(Mandatory = $true)]
-        [string] $filepath
-    )
-    # $file = (Test-Path $filepath) ? "$filepath" : "$profileDir\scoop_app"
-    $file = ($filepath) ? "$filepath" : "$profileDir\scoop_app"
-    $apps = scoop export | awk '{print $1}' | Join-String -Separator " "
-    Write-Output $apps > $file
-    $msg = (Test-Path $file) ? "Success" : "Fail"
-    Write-Output $msg
-}
-export-scoop
-```
-
-## 导入应用列表
-
-```powershell
-function import-scoop {
-    param(
-        [parameter(Mandatory = $true)]
-        [string] $filepath
-    )
-
-    if (Test-Path "$profileDir\scoop_app") {
-        $file = "$profileDir\scoop_app"
-    }
-
-    $apps = Get-Content $file
-    $cmd = "scoop install " + $apps
-    Invoke-Expression $cmd
-}
-import-scoop
-```
 
 ## 更多命令
 
@@ -151,11 +112,13 @@ $ scoop help
 alias       Manage scoop aliases
 bucket      Manage Scoop buckets
 cache       Show or clear the download cache
+cat         Show content of specified manifest. If available, `bat` will be used to pretty-print the JSON.
 checkup     Check for potential problems
 cleanup     Cleanup apps by removing old versions
 config      Get or set configuration values
 create      Create a custom app manifest
 depends     List dependencies for an app
+download    Download apps in the cache folder and verify hashes
 export      Exports (an importable) list of installed apps
 help        Show help for a command
 hold        Hold an app to disable updates
@@ -166,6 +129,7 @@ list        List installed apps
 prefix      Returns the path to the specified app
 reset       Reset an app to resolve conflicts
 search      Search available apps
+shim        Manipulate Scoop shims
 status      Show status and check for new app versions
 unhold      Unhold an app to enable updates
 uninstall   Uninstall an app

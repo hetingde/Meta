@@ -3,7 +3,7 @@
 
 current_dir=$(cd -P -- "$(dirname -- "$0")" && pwd -P)
 DATE=$(TZ=UTC-8 date '+%Y-%m-%d %H:%M:%S')
-commiter=$(whoami)
+commiter=$(git config user.name)
 bucket_dir="${current_dir}/bucket/"
 readme_file="${current_dir}/README.md"
 toc_file="${current_dir}/toc.md"
