@@ -1,0 +1,47 @@
+name: CheckVer
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "10 */8 * * *"
+jobs:
+  checkver:
+    name: CheckVer
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          ref: version
+      - name: Update package manager database
+        run: sudo apt-get update
+      - name: Install Dependence
+        run: sudo apt-get install curl jq xxd libxml2-utils
+      - name: Git config
+        run: |
+          git config --local user.email "78083448+JaimeZeng@users.noreply.github.com"
+          git config --local user.name "JaimeZeng"
+      - name: Check
+        run: bash check.sh
+      - name: CheckVer
+        run: |
+          userAgent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.93 Safari/537.36"
+          wget --user-agent="${userAgent}" --no-check-certificate -O "bandicam" "https://pan.jiemi.workers.dev/?file=/scoop/Bandicam/sha256sum"
+          wget --user-agent="${userAgent}" --no-check-certificate -O "bcompare" "https://pan.jiemi.workers.dev/?file=/scoop/BCompare/sha256sum"
+          wget --user-agent="${userAgent}" --no-check-certificate -O "ccleaner" "https://pan.jiemi.workers.dev/?file=/scoop/CCleaner/sha256sum"
+          wget --user-agent="${userAgent}" --no-check-certificate -O "idm" "https://pan.jiemi.workers.dev/?file=/scoop/IDM/sha256sum"
+          wget --user-agent="${userAgent}" --no-check-certificate -O "music" "https://pan.jiemi.workers.dev/?file=/scoop/Music/sha256sum"
+          wget --user-agent="${userAgent}" --no-check-certificate -O "patch" "https://pan.jiemi.workers.dev/?file=/scoop/patch/sha256sum"
+          wget --user-agent="${userAgent}" --no-check-certificate -O "potplayer" "https://pan.jiemi.workers.dev/?file=/scoop/PotPlayer/sha256sum"
+          wget --user-agent="${userAgent}" --no-check-certificate -O "qq" "https://pan.jiemi.workers.dev/?file=/scoop/QQ/sha256sum"
+          wget --user-agent="${userAgent}" --no-check-certificate -O "tools" "https://pan.jiemi.workers.dev/?file=/scoop/tools/sha256sum"
+          wget --user-agent="${userAgent}" --no-check-certificate -O "vcredist" "https://pan.jiemi.workers.dev/?file=/scoop/vcredist/sha256sum"
+          wget --user-agent="${userAgent}" --no-check-certificate -O "xshell" "https://pan.jiemi.workers.dev/?file=/scoop/Xshell/sha256sum"
+      - name: Commit
+        run: |
+          git add .
+          git commit -m "checkver"
+      - name: Push changes
+        uses: ad-m/github-push-action@master
+        with:
+          branch: version
+          github_token: ${{ secrets.GH_TOKEN }}
+
