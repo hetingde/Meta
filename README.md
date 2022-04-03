@@ -6,6 +6,7 @@
 scoop bucket add sapps https://github.com/Ryanjiena/scoop-apps
 # for china users
 scoop bucket add sapps https://e.coding.net/ryanjie/scoop/scoop-apps.git
+cd $env:SCOOP\buckets\sapps\; git config pull.rebase true
 
 # update bucket
 scoop update
