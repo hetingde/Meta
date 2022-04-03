@@ -51,7 +51,7 @@ jobs:
       - name: Replace manifest
         run: |
           cd bucket/
-          find . -name '*.json' -printf "'%f'\n" | xargs -i sed -i 's|\(https://github.com/.*/releases/download\)|https://github.do/\1|g;s|\(https://raw.githubusercontent.com/\)|https://github.do/\1|g' {}
+          find . -name '*.json' -printf "'%f'\n" | xargs -i sed -i 's|\(https://github.com/.*/releases/download\)|https://github.do/\1|g;s|\(https://github.com/.*/archive\)|https://github.do/\1|g;s|\(https://raw.githubusercontent.com/\)|https://github.do/\1|g' {}
       - name: Commit changes
         run: |
           git add .
