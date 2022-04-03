@@ -1,4 +1,4 @@
-# scoop-apps [![Build status](https://ci.appveyor.com/api/projects/status/g540p5w15tkltp23/branch/master?svg=true)](https://ci.appveyor.com/project/Ryanjiena/scoop-apps/branch/master) [![Excavator](https://github.com/Ryanjiena/scoop-apps/actions/workflows/schedule.yml/badge.svg)](https://github.com/Ryanjiena/scoop-apps/actions/workflows/schedule.yml)
+# scoop-apps [![Build status](https://ci.appveyor.com/api/projects/status/g540p5w15tkltp23/branch/master?svg=true)](https://ci.appveyor.com/project/Ryanjiena/scoop-apps/branch/master) [![Excavator](https://github.com/Ryanjiena/scoop-apps/actions/workflows/schedule.yml/badge.svg)](https://github.com/Ryanjiena/scoop-apps/actions/workflows/schedule.yml) [![Coding](https://badgen.net/badge/Coding/scoop-apps/green)](https://ryanjie.coding.net/public/scoop/scoop-apps/git/files)
 
 ## Installation / 安装
 
