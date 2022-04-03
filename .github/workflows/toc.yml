@@ -6,10 +6,10 @@ on:
       - "bucket/*.json"
       - "!README.md"
   workflow_dispatch:
-  # workflow_run:
-  #   workflows: ["Excavator"]
-  #   types: [completed]
-  #   branches: [master]
+  workflow_run:
+    workflows: ["Excavator"]
+    types: [completed]
+    branches: [master]
   # schedule:
   #   - cron: "30 * * * *"
 jobs:
