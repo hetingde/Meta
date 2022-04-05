@@ -247,5 +247,7 @@ scoop install sapps/<app>
 
 *Updated by: JaimeZeng, at: 2022-04-05 21:15:12*
 <!--te-->
+    
+![Visitor Count](https://profile-counter.glitch.me/Ryanjiena/count.svg)    
 
 </details>
