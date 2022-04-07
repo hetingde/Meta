@@ -105,6 +105,10 @@ scoop unhold <app>
 
 `scoop list`
 
+## 备份
+
+<https://github.com/KNOXDEV/scoop-backup>
+
 ## 更多命令
 
 ```powershell
