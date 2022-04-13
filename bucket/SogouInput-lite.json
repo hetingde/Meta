@@ -22,13 +22,10 @@
     "url": "https://pan.jiemi.workers.dev/?file=/scoop/sogou/SogouInput_v11.9.0.5688_zd423_noad_lite.exe#/installer.exe",
     "hash": "879b93d046185b956a5a73e28f2e8a186cbd13bd8aa76d72f3aa8e06002fcdbd",
     "installer": {
-        "file": "installer.exe",
-        "args": [
-            "/S",
-            "/D=$dir"
-        ]
+        "script": "sudo Start-Process -filepath \"$dir\\installer.exe\" -WorkingDirectory \"$dir\" -ArgumentList \"/S /D=$dir\" -Wait"
     },
     "post_install": [
+        "Remove-Item \"$dir\\installer.exe\" -Force",
         "if (!(Test-Path \"$dir\\User Data\\*\") -and (Test-Path \"$env:USERPROFILE\\AppData\\LocalLow\\SogouPY\") -and (Test-Path \"$env:USERPROFILE\\AppData\\LocalLow\\SogouPY.users\")) {",
         "    info '[Portable Mode]: Copying user data...'",
         "    Copy-Item \"$env:USERPROFILE\\AppData\\LocalLow\\SogouPY\" \"$dir\\User Data\" -Recurse",
