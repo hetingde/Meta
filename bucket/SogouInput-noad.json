@@ -25,15 +25,15 @@
         "Remove-Item \"$dir\\installer.exe\" -Force",
         "if (!(Test-Path \"$dir\\User Data\\*\") -and (Test-Path \"$env:USERPROFILE\\AppData\\LocalLow\\SogouPY\") -and (Test-Path \"$env:USERPROFILE\\AppData\\LocalLow\\SogouPY.users\")) {",
         "    info '[Portable Mode]: Copying user data...'",
-        "    Copy-Item \"$env:USERPROFILE\\AppData\\LocalLow\\SogouPY\" \"$dir\\User Data\" -Recurse",
-        "    Copy-Item \"$env:USERPROFILE\\AppData\\LocalLow\\SogouPY.users\" \"$dir\\User Data\" -Recurse",
+        "    Copy-Item \"$env:USERPROFILE\\AppData\\LocalLow\\SogouPY\" \"$dir\\User Data\\SogouPY\" -Recurse",
+        "    Copy-Item \"$env:USERPROFILE\\AppData\\LocalLow\\SogouPY.users\" \"$dir\\User Data\\SogouPY.users\" -Recurse",
         "}"
     ],
     "uninstaller": {
         "script": [
             "info 'Manually persist 'User Data'...'",
-            "Copy-Item \"$env:USERPROFILE\\AppData\\LocalLow\\SogouPY\" \"$persist_dir\\User Data\" -Recurse",
-            "Copy-Item \"$env:USERPROFILE\\AppData\\LocalLow\\SogouPY.users\" \"$persist_dir\\User Data\" -Recurse",
+            "Move-Item \"$env:USERPROFILE\\AppData\\LocalLow\\SogouPY\" \"$persist_dir\\User Data\\SogouPY\" -Recurse",
+            "Move-Item \"$env:USERPROFILE\\AppData\\LocalLow\\SogouPY.users\" \"$persist_dir\\User Data\\SogouPY.users\" -Recurse",
             "Start-Process -filepath \"$dir\\$version\\Uninstall.exe\" -WorkingDirectory \"$dir\" -ArgumentList \"/S\" -PassThru -NoNewWindow | Wait-Process",
             "Write-Host \"'A restart is required to complete the uninstallation.\" -Foreground Magenta"
         ]

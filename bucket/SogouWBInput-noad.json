@@ -25,15 +25,15 @@
         "Remove-Item \"$dir\\installer.exe\" -Force",
         "if (!(Test-Path \"$dir\\User Data\\*\") -and (Test-Path \"$env:USERPROFILE\\AppData\\LocalLow\\SogouWB\") -and (Test-Path \"$env:USERPROFILE\\AppData\\LocalLow\\SogouWB.users\")) {",
         "    info '[Portable Mode]: Copying user data...'",
-        "    Copy-Item \"$env:USERPROFILE\\AppData\\LocalLow\\SogouWB\" \"$dir\\User Data\" -Recurse",
-        "    Copy-Item \"$env:USERPROFILE\\AppData\\LocalLow\\SogouWB.users\" \"$dir\\User Data\" -Recurse",
+        "    Copy-Item \"$env:USERPROFILE\\AppData\\LocalLow\\SogouWB\" \"$dir\\User Data\\SogouWB\" -Recurse",
+        "    Copy-Item \"$env:USERPROFILE\\AppData\\LocalLow\\SogouWB.users\" \"$dir\\User Data\\SogouWB.users\" -Recurse",
         "}"
     ],
     "uninstaller": {
         "script": [
             "info 'Manually persist 'User Data'...'",
-            "Copy-Item \"$env:USERPROFILE\\AppData\\LocalLow\\SogouWB\" \"$persist_dir\\User Data\" -Recurse",
-            "Copy-Item \"$env:USERPROFILE\\AppData\\LocalLow\\SogouWB.users\" \"$persist_dir\\User Data\" -Recurse",
+            "Move-Item \"$env:USERPROFILE\\AppData\\LocalLow\\SogouWB\" \"$persist_dir\\User Data\\SogouWB\" -Recurse",
+            "Move-Item \"$env:USERPROFILE\\AppData\\LocalLow\\SogouWB.users\" \"$persist_dir\\User Data\\SogouWB.users\" -Recurse",
             "Start-Process -filepath \"$dir\\$version\\Uninstall.exe\" -WorkingDirectory \"$dir\" -ArgumentList \"/S\" -PassThru -NoNewWindow | Wait-Process",
             "Write-Host \"'A restart is required to complete the uninstallation.\" -Foreground Magenta"
         ]
