@@ -19,7 +19,7 @@
     "url": "https://pan.jiemi.workers.dev/?file=/scoop/sogou/SogouInput_v11.9a(11.9.0.5687)_xingkbjm_lite.exe#/installer.exe",
     "hash": "84b83db276dc044fa88cf375e642b42c7a3a3a77fa40fb5b756327c163052f78",
     "installer": {
-        "file": "Installer.exe",
+        "file": "installer.exe",
         "args": [
             "/S",
             "/D=$dir"

@@ -17,7 +17,7 @@
     "url": "https://pan.jiemi.workers.dev/?file=/scoop/sogou/SogouWBInput_v5.5a(5.5.0.2552)_xingkbjm_noad.exe#/installer.exe",
     "hash": "bcbcb78721baa27c0d80675a15993beb0d1881d9ee95c66e54d9c80904c5c4a4",
     "installer": {
-        "file": "Installer.exe",
+        "file": "installer.exe",
         "args": [
             "/S",
             "/D=$dir"
