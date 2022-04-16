@@ -14,7 +14,7 @@ jobs:
           git config --local user.email "78083448+JaimeZeng@users.noreply.github.com"
           git config --local user.name "JaimeZeng"
       - name: Excavate
-        uses: ScoopInstaller/GithubActions@main
+        uses: CrendKing/GithubActions@main
         env:
           USER_EMAIL: 78083448+JaimeZeng@users.noreply.github.com
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
