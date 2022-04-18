@@ -1,4 +1,4 @@
-# scoop-apps [![Tests](https://github.com/Ryanjiena/scoop-apps/actions/workflows/ci.yml/badge.svg)](https://github.com/Ryanjiena/scoop-apps/actions/workflows/ci.yml) [![Excavator](https://github.com/Ryanjiena/scoop-apps/actions/workflows/schedule.yml/badge.svg)](https://github.com/Ryanjiena/scoop-apps/actions/workflows/schedule.yml) [![Coding](https://badgen.net/badge/Coding/scoop-apps/green)](https://ryanjie.coding.net/public/scoop/scoop-apps/git/files) <!-- [![Visitors](https://komarev.com/ghpvc/?username=ryanjiena&color=brightgreen&style=flat&label=Visitors)](ttps://github.com/Ryanjiena/Ryanjiena) -->
+# scoop-apps [![Tests](https://github.com/Ryanjiena/scoop-apps/actions/workflows/ci.yml/badge.svg)](https://github.com/Ryanjiena/scoop-apps/actions/workflows/ci.yml) [![Excavator](https://github.com/Ryanjiena/scoop-apps/actions/workflows/schedule.yml/badge.svg)](https://github.com/Ryanjiena/scoop-apps/actions/workflows/schedule.yml) [![Coding](https://badgen.net/badge/Coding/scoop-apps/green)](https://ryanjie.coding.net/public/scoop/scoop-apps/git/files)[![Visitors](https://komarev.com/ghpvc/?username=ryanjiena&color=brightgreen&style=flat&label=Visitors)](ttps://github.com/Ryanjiena/Ryanjiena)
 
 ## Installation / 安装
 
@@ -282,4 +282,4 @@ scoop install sapps/<app>
 
 </details>
 
-<!-- ![Visitor](https://profile-counter.glitch.me/Ryanjiena/count.svg) -->
+[Visitor](https://profile-counter.glitch.me/Ryanjiena/count.svg)
