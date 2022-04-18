@@ -282,4 +282,5 @@ scoop install sapps/<app>
 
 </details>
 
-[Visitor](https://profile-counter.glitch.me/Ryanjiena/count.svg)
+
+![Visitor](https://profile-counter.glitch.me/Ryanjiena/count.svg)
