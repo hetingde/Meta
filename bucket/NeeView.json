@@ -18,6 +18,11 @@
             "extract_dir": "NeeView39.3-x86"
         }
     },
+    "pre_install": [
+        "'UserSetting', 'Bookmark', 'History' | ForEach-Object {",
+        "    if (!(Test-Path \"$persist_dir\\$_.json\")) { New-Item \"$dir\\$_.json\" -ItemType \"file\" | Out-Null }",
+        "}"
+    ],
     "bin": "NeeView.exe",
     "shortcuts": [
         [
