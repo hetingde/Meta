@@ -3,7 +3,7 @@
     "description": "Eagle helps you become a happier, better designer. A new way to collect, search and organize your image files in a logical way and all in one place.",
     "homepage": "https://en.eagle.cool/",
     "license": {
-        "identifier": "Freeware",
+        "identifier": "Shareware",
         "url": "https://en.eagle.cool/privacy"
     },
     "depends": "sudo",
