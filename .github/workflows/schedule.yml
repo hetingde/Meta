@@ -27,9 +27,7 @@ jobs:
       - name: Check
         run: bash check.sh
       - name: Commit
-        run: |
-          git add .
-          git commit -m "checkver"
+        run: git commit -am "checkver"
       - name: Push changes
         uses: ad-m/github-push-action@master
         with:
