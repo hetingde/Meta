@@ -33,7 +33,7 @@ scoop install sapps/<app>
 ## Manifests / 清单
 
 <details>
-<summary>Apps</summary>
+<summary>Manifests</summary>
 
 <!--ts-->
 <!--te-->
