@@ -25,7 +25,7 @@ jobs:
           git config --local user.email "78083448+JaimeZeng@users.noreply.github.com"
           git config --local user.name "JaimeZeng"
       - name: Check
-        run: bash check.sh
+        run: sed -i 's/\r$//' check.sh && bash check.sh
       - name: Commit
         run: git commit -am "checkver"
       - name: Push changes
