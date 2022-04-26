@@ -220,13 +220,13 @@ if ($Request) {
     git log --graph --topo-order --date=short --abbrev-commit --decorate --boundary --pretty=format:'%Cgreen%s %Cblue[%cn]%Creset %Cblue%G?%Creset' master..$PRBranchName > PrBodyFile
     Write-Output "${OFS} - [x] I have read the [Contributing Guide](https://github.com/ScoopInstaller/.github/blob/main/.github/CONTRIBUTING.md)." >> PrBodyFile
 
-    $Result = parse_repo $RepoName
-    $Server = $Result.Server
-    $Owner = $Result.Owner
-    $Repo = $Result.Repo
+    # $Result = parse_repo $RepoName
+    # $Server = $Result.Server
+    # $Owner = $Result.Owner
+    # $Repo = $Result.Repo
 
     $getParams = @(
-        "--repo $Server/$Owner/$Repo",
+        # "--repo $Server/$Owner/$Repo",
         "--title '$PRTitle'",
         "--head $PRBranchName",
         "--base $Base",
