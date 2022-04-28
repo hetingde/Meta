@@ -223,5 +223,11 @@
         "scope": "json,jsonc",
         "body": ["\"https://github.com/Ryanjiena/scoop-apps/raw/version/$1\","],
         "description": "scoop-apps-version"
+    },
+    "a hash": {
+        "prefix": "ahash",
+        "scope": "json,jsonc",
+        "body": "\"9db68050bc1160739800bb17ac129b2f914ff93b684cc7ca0ee75cfd06045c00\"",
+        "description": "a hash"
     }
 }
