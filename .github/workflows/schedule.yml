@@ -4,41 +4,13 @@ on:
   workflow_dispatch:
   schedule:
     - cron: "0 */8 * * *"
-env:
-  TZ: Asia/Shanghai
-  CONFIG: ${{ secrets.CONFIG }}
 
 jobs:
-  checkver:
-    name: CheckVer
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-        with:
-          ref: version
-      - name: Update package manager database
-        run: sudo apt-get update
-      - name: Install Dependence
-        run: sudo apt-get install curl wget jq xxd libxml2-utils
-      - name: Git config
-        run: |
-          git config --local user.email "78083448+JaimeZeng@users.noreply.github.com"
-          git config --local user.name "JaimeZeng"
-      - name: Check
-        run: sed -i 's/\r$//' check.sh && bash check.sh
-      - name: Commit
-        run: git commit -am "checkver"
-      - name: Push changes
-        uses: ad-m/github-push-action@master
-        with:
-          branch: version
-          github_token: ${{ secrets.GH_TOKEN }}
-
   excavate:
     name: Excavate
     runs-on: windows-latest
-    if: ${{ always() }}
-    needs: checkver
+    # if: ${{ always() }}
+    # needs: checkver
     steps:
       - uses: actions/checkout@v3
       - name: Git config
