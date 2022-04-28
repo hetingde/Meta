@@ -36,7 +36,7 @@
     ],
     "persist": "Profiles",
     "checkver": {
-        "url": "https://github.com/Ryanjiena/scoop-apps/raw/version/runningcheese",
+        "url": "https://scoop-apps.vercel.app/runningcheese",
         "regex": "(?s)RunningCheeseFirefox-v([\\d.]+)\\.7z",
         "reverse": true
     },
@@ -45,7 +45,7 @@
             "64bit": {
                 "url": "https://pan.jiemi.workers.dev/?file=/scoop/runningcheese/RunningCheeseFirefox-v$version.7z",
                 "hash": {
-                    "url": "https://github.com/Ryanjiena/scoop-apps/raw/version/runningcheese",
+                    "url": "https://scoop-apps.vercel.app/runningcheese",
                     "mode": "extract",
                     "regex": "^$sha256([\\s]+)$basename"
                 }
@@ -53,7 +53,7 @@
             "32bit": {
                 "url": "https://pan.jiemi.workers.dev/?file=/scoop/runningcheese/RunningCheeseFirefox_32bit-v$version.7z",
                 "hash": {
-                    "url": "https://github.com/Ryanjiena/scoop-apps/raw/version/runningcheese",
+                    "url": "https://scoop-apps.vercel.app/runningcheese",
                     "mode": "extract",
                     "regex": "^$sha256([\\s]+)$basename"
                 }

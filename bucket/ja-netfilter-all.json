@@ -17,14 +17,14 @@
         "scripts\\uninstall-all-users.vbs"
     ],
     "checkver": {
-        "url": "https://github.com/Ryanjiena/scoop-apps/raw/version/patch",
+        "url": "https://scoop-apps.vercel.app/patch",
         "regex": "(?s)(?<filename>ja-netfilter-all-(?<Sha>(?<short>[a-fA-F0-9]{8})[a-fA-F0-9]{32})\\.(?:zip|7z))",
         "replace": "${short}"
     },
     "autoupdate": {
         "url": "https://pan.jiemi.workers.dev/?file=/scoop/patch/$matchFilename",
         "hash": {
-            "url": "https://github.com/Ryanjiena/scoop-apps/raw/version/patch",
+            "url": "https://scoop-apps.vercel.app/patch",
             "mode": "extract",
             "regex": "^$sha256([\\s]+)$basename"
         }

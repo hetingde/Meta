@@ -29,14 +29,14 @@
         ]
     },
     "checkver": {
-        "url": "https://github.com/Ryanjiena/scoop-apps/raw/version/sogou",
+        "url": "https://scoop-apps.vercel.app/sogou",
         "regex": "(?s)(?<filename>SogouWBInput_v(?<shortVersion>[\\w.]+)[(]([\\d.]+)[)]_xingkbjm_noad\\.exe)",
         "reverse": true
     },
     "autoupdate": {
         "url": "https://pan.jiemi.workers.dev/?file=/scoop/sogou/$matchFilename#/installer.exe",
         "hash": {
-            "url": "https://github.com/Ryanjiena/scoop-apps/raw/version/sogou",
+            "url": "https://scoop-apps.vercel.app/sogou",
             "mode": "extract",
             "regex": "^$sha256([\\s]+)$basename"
         }

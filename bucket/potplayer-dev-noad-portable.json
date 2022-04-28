@@ -50,7 +50,7 @@
         "UrlList"
     ],
     "checkver": {
-        "url": "https://github.com/Ryanjiena/scoop-apps/raw/version/potplayer",
+        "url": "https://scoop-apps.vercel.app/potplayer",
         "regex": "(?s)(?<filename>Pot_Player(?:64|32)_v(?<version>[\\d]+)[(](?<build>[\\d.]+)[)]_(?:Dev)\\.(?:zip|7z))"
     },
     "autoupdate": {
@@ -58,7 +58,7 @@
             "64bit": {
                 "url": "https://pan.jiemi.workers.dev/?file=/scoop/PotPlayer/$matchFilename",
                 "hash": {
-                    "url": "https://github.com/Ryanjiena/scoop-apps/raw/version/potplayer",
+                    "url": "https://scoop-apps.vercel.app/potplayer",
                     "mode": "extract",
                     "regex": "^$sha256([\\s]+)$basename"
                 }

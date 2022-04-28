@@ -40,13 +40,13 @@
         "Portable"
     ],
     "checkver": {
-        "url": "https://github.com/Ryanjiena/scoop-apps/raw/version/msedge",
+        "url": "https://scoop-apps.vercel.app/msedge",
         "jsonpath": "$[?(@.Product == 'dev')].Version"
     },
     "autoupdate": {
         "url": "https://pan.jiemi.workers.dev/?file=/scoop/shuax/Edge.7z",
         "hash": {
-            "url": "https://github.com/Ryanjiena/scoop-apps/raw/version/shuax",
+            "url": "https://scoop-apps.vercel.app/shuax",
             "mode": "extract",
             "regex": "$sha256\\s+$basename"
         }

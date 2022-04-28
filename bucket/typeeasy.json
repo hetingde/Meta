@@ -40,13 +40,13 @@
         ]
     ],
     "checkver": {
-        "url": "https://github.com/Ryanjiena/scoop-apps/raw/version/typeeasy",
+        "url": "https://scoop-apps.vercel.app/typeeasy",
         "regex": "(?s)(?<filename>TypeEasy_(?<version>([\\d.]+))_NoAD-(?<date>([\\d])+)\\.(?:7z|zip|rar))"
     },
     "autoupdate": {
         "url": "https://pan.jiemi.workers.dev/?file=/scoop/TypeEasy/$matchFilename",
         "hash": {
-            "url": "https://github.com/Ryanjiena/scoop-apps/raw/version/typeeasy",
+            "url": "https://scoop-apps.vercel.app/typeeasy",
             "mode": "extract",
             "regex": "^$sha256([\\s]+)$basename"
         }

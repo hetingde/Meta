@@ -44,13 +44,13 @@
         ]
     },
     "checkver": {
-        "url": "https://github.com/Ryanjiena/scoop-apps/raw/version/potplayer",
+        "url": "https://scoop-apps.vercel.app/potplayer",
         "regex": "(?s)(?<filename>potplayer-skin-(?<version>[\\d]+)\\.(?:zip|7z))"
     },
     "autoupdate": {
         "url": "https://pan.jiemi.workers.dev/?file=/scoop/PotPlayer/$matchFilename",
         "hash": {
-            "url": "https://github.com/Ryanjiena/scoop-apps/raw/version/potplayer",
+            "url": "https://scoop-apps.vercel.app/potplayer",
             "mode": "extract",
             "regex": "^$sha256([\\s]+)$basename"
         }

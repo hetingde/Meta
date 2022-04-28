@@ -37,13 +37,13 @@
         ]
     ],
     "checkver": {
-        "url": "https://github.com/Ryanjiena/scoop-apps/raw/version/zd423",
+        "url": "https://scoop-apps.vercel.app/zd423",
         "regex": "(?s)(?<filename>KwMusic_([\\d.]+).*?\\.(?:7z|zip|rar))"
     },
     "autoupdate": {
         "url": "https://pan.jiemi.workers.dev/?file=/scoop/zd423/$matchFilename",
         "hash": {
-            "url": "https://github.com/Ryanjiena/scoop-apps/raw/version/zd423",
+            "url": "https://scoop-apps.vercel.app/zd423",
             "mode": "extract",
             "regex": "^$sha256([\\s]+)$basename"
         }

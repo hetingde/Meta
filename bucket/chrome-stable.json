@@ -41,7 +41,7 @@
     ],
     "persist": "User Data",
     "checkver": {
-        "url": "https://github.com/Ryanjiena/scoop-apps/raw/version/chrome",
+        "url": "https://scoop-apps.vercel.app/chrome",
         "regex": "(?sm)stable.*?win-x86.*?(?<86>chrome/[\\w-]+_(?<version>[\\d.]+).*?_chrome_installer.exe).*?win-x64.*?(?<64>chrome/[\\w-]+_(?<version>[\\d.]+).*?_chrome_installer.exe)"
     },
     "autoupdate": {
@@ -49,14 +49,14 @@
             "64bit": {
                 "url": "https://redirector.gvt1.com/edgedl/release2/$match64#/dl.7z",
                 "hash": {
-                    "url": "https://github.com/Ryanjiena/scoop-apps/raw/version/chrome",
+                    "url": "https://scoop-apps.vercel.app/chrome",
                     "jsonpath": "$[?(@.Product == 'stable')].Release[?(@.Architecture == 'win-x64')].Hash"
                 }
             },
             "32bit": {
                 "url": "https://redirector.gvt1.com/edgedl/release2/$match86#/dl.7z",
                 "hash": {
-                    "url": "https://github.com/Ryanjiena/scoop-apps/raw/version/chrome",
+                    "url": "https://scoop-apps.vercel.app/chrome",
                     "jsonpath": "$[?(@.Product == 'stable')].Release[?(@.Architecture == 'win-x86')].Hash"
                 }
             }

@@ -21,13 +21,13 @@
         ]
     ],
     "checkver": {
-        "url": "https://github.com/Ryanjiena/scoop-apps/raw/version/bcompare",
+        "url": "https://scoop-apps.vercel.app/bcompare",
         "regex": "(?s)(?<filename>BComparePortable_v([\\d.]+)_(?<date>\\d+)\\.(?:zip|7z))"
     },
     "autoupdate": {
         "url": "https://pan.jiemi.workers.dev/?file=/scoop/BCompare/$matchFilename",
         "hash": {
-            "url": "https://github.com/Ryanjiena/scoop-apps/raw/version/bcompare",
+            "url": "https://scoop-apps.vercel.app/bcompare",
             "mode": "extract",
             "regex": "^$sha256([\\s]+)$basename"
         }

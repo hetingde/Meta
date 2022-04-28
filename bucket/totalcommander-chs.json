@@ -55,7 +55,7 @@
         "Wincmd.key"
     ],
     "checkver": {
-        "url": "https://github.com/Ryanjiena/scoop-apps/raw/version/iyoung",
+        "url": "https://scoop-apps.vercel.app/iyoung",
         "regex": "(?sm)(?<x64>TCCEE_x64_v([\\w.]+).*?)\\.7z.*?(?<x86>TCCEE_x86.*?)\\.7z"
     },
     "autoupdate": {
@@ -63,7 +63,7 @@
             "64bit": {
                 "url": "https://pan.jiemi.workers.dev/?file=/scoop/iyoung/$matchX64.7z",
                 "hash": {
-                    "url": "https://github.com/Ryanjiena/scoop-apps/raw/version/iyoung",
+                    "url": "https://scoop-apps.vercel.app/iyoung",
                     "mode": "extract",
                     "regex": "$sha256//s+$basename"
                 },
@@ -72,7 +72,7 @@
             "32bit": {
                 "url": "https://pan.jiemi.workers.dev/?file=/scoop/iyoung/$matchX86.7z",
                 "hash": {
-                    "url": "https://github.com/Ryanjiena/scoop-apps/raw/version/iyoung",
+                    "url": "https://scoop-apps.vercel.app/iyoung",
                     "mode": "extract",
                     "regex": "$sha256//s+$basename"
                 },
