@@ -25,7 +25,7 @@
         }
     },
     "checkver": {
-        "url": "https://github.com/Ryanjiena/scoop-apps/raw/version/shuax",
+        "url": "https://scoop-apps.vercel.app/shuax",
         "regex": "chrome_plus-x64-v([\\d.]+)\\.zip"
     },
     "autoupdate": {
@@ -38,7 +38,7 @@
             }
         },
         "hash": {
-            "url": "https://github.com/Ryanjiena/scoop-apps/raw/version/shuax",
+            "url": "https://scoop-apps.vercel.app/shuax",
             "mode": "extract",
             "regex": "$sha256\\s+$basename"
         }

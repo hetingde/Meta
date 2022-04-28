@@ -26,13 +26,13 @@
     ],
     "persist": "Netease",
     "checkver": {
-        "url": "https://github.com/Ryanjiena/scoop-apps/raw/version/zd423",
+        "url": "https://scoop-apps.vercel.app/zd423",
         "regex": "(?<file>CloudMusic_v([\\d.]+)\\.7z)"
     },
     "autoupdate": {
         "url": "https://pan.jiemi.workers.dev/?file=/scoop/zd423/$matchFile",
         "hash": {
-            "url": "https://github.com/Ryanjiena/scoop-apps/raw/version/zd423",
+            "url": "https://scoop-apps.vercel.app/zd423",
             "mode": "extract",
             "regex": "$sha256\\s+$basename"
         }

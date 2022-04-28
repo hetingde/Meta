@@ -221,7 +221,7 @@
     "scoop-apps-version": {
         "prefix": "sapps-version",
         "scope": "json,jsonc",
-        "body": ["\"https://github.com/Ryanjiena/scoop-apps/raw/version/$1\","],
+        "body": ["\"https://scoop-apps.vercel.app/$1\","],
         "description": "scoop-apps-version"
     },
     "a hash": {

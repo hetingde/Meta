@@ -25,13 +25,13 @@
     ],
     "persist": "data",
     "checkver": {
-        "url": "https://github.com/Ryanjiena/scoop-apps/raw/version/clash",
+        "url": "https://scoop-apps.vercel.app/clash",
         "regex": "Clash.NET.([\\d.]+)\\.zip"
     },
     "autoupdate": {
         "url": "https://pan.jiemi.workers.dev/?file=/scoop/clash/Clash.NET.$version.zip",
         "hash": {
-            "url": "https://github.com/Ryanjiena/scoop-apps/raw/version/clash",
+            "url": "https://scoop-apps.vercel.app/clash",
             "mode": "extract",
             "regex": "^sha256([\\s]+)$basename"
         },

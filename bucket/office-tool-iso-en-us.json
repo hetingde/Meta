@@ -21,7 +21,7 @@
     ],
     "persist": "Office",
     "checkver": {
-        "url": "https://github.com/Ryanjiena/scoop-apps/raw/version/office-iso",
+        "url": "https://scoop-apps.vercel.app/office-iso",
         "regex": "en_US version = ([\\d.]+)"
     },
     "autoupdate": {

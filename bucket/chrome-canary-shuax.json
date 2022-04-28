@@ -40,13 +40,13 @@
         "Cache"
     ],
     "checkver": {
-        "url": "https://github.com/Ryanjiena/scoop-apps/raw/version/chrome",
+        "url": "https://scoop-apps.vercel.app/chrome",
         "regex": "(?sm)canary.*?win-x86.*?chrome/[\\w-]+_([\\d.]+)"
     },
     "autoupdate": {
         "url": "https://pan.jiemi.workers.dev/?file=/scoop/shuax/Chrome.7z",
         "hash": {
-            "url": "https://github.com/Ryanjiena/scoop-apps/raw/version/shuax",
+            "url": "https://scoop-apps.vercel.app/shuax",
             "mode": "extract",
             "regex": "$sha256\\s+$basename"
         }

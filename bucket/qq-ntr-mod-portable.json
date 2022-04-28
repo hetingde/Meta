@@ -64,7 +64,7 @@
         ]
     ],
     "checkver": {
-        "url": "https://github.com/Ryanjiena/scoop-apps/raw/version/qq",
+        "url": "https://scoop-apps.vercel.app/qq",
         "regex": "(?s)(?<filename>QQ_(?<ver>([\\d.]+))_[(](?<build>([\\d]+))[)]_Portable_With_NtrQQ_.*?\\.(?:7z|zip|rar))",
         "replace": "${ver}.${build}",
         "reverse": true
@@ -72,7 +72,7 @@
     "autoupdate": {
         "url": "https://pan.jiemi.workers.dev/?file=/scoop/QQ/$matchFilename",
         "hash": {
-            "url": "https://github.com/Ryanjiena/scoop-apps/raw/version/qq",
+            "url": "https://scoop-apps.vercel.app/qq",
             "mode": "extract",
             "regex": "^$sha256([\\s]+)$basename"
         }

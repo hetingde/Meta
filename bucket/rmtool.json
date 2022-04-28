@@ -25,14 +25,14 @@
         ]
     ],
     "checkver": {
-        "url": "https://github.com/Ryanjiena/scoop-apps/raw/version/tools",
+        "url": "https://scoop-apps.vercel.app/tools",
         "regex": "(?s)(?<filename>rmtool_v(?<version>[\\d.]+)_(?<date>\\d+)\\.(?:exe|zip|7z))",
         "reverse": true
     },
     "autoupdate": {
         "url": "https://pan.jiemi.workers.dev/?file=/scoop/tools/$matchFilename#/Installer.exe",
         "hash": {
-            "url": "https://github.com/Ryanjiena/scoop-apps/raw/version/tools",
+            "url": "https://scoop-apps.vercel.app/tools",
             "mode": "extract",
             "regex": "^$sha256([\\s]+)$basename"
         }

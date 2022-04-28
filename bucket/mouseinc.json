@@ -25,7 +25,7 @@
     ],
     "persist": "MouseInc.json",
     "checkver": {
-        "url": "https://github.com/Ryanjiena/scoop-apps/raw/version/mouseinc",
+        "url": "https://scoop-apps.vercel.app/mouseinc",
         "jsonpath": "$.version"
     },
     "autoupdate": {
