@@ -1,5 +1,5 @@
 {
-    "version": "8.8.8",
+    "version": "8.9.0",
     "description": "小书匠, 不仅仅是一款 markdown 篇辑器, 更是一款功能丰富, 强大的知识管理工具",
     "homepage": "http://soft.xiaoshujiang.com/",
     "license": {
@@ -7,12 +7,12 @@
     },
     "architecture": {
         "64bit": {
-            "url": "https://github.com/suziwen/markdownxiaoshujiang/releases/download/v8.8.8/Story-writer-win64-setup.exe",
-            "hash": "md5:11a8c27cf53b506bcee15169bce04835"
+            "url": "https://github.com/suziwen/markdownxiaoshujiang/releases/download/v8.9.0/Story-writer-win64-setup.exe",
+            "hash": "md5:9824b7c0ee6ad116b7dfe2970e388922"
         },
         "32bit": {
-            "url": "https://github.com/suziwen/markdownxiaoshujiang/releases/download/v8.8.8/Story-writer-win32-setup.exe",
-            "hash": "md5:aa8fec5df6abd8f3a7a8c744e0a42e3e"
+            "url": "https://github.com/suziwen/markdownxiaoshujiang/releases/download/v8.9.0/Story-writer-win32-setup.exe",
+            "hash": "md5:a9e4d2dbe08e36a59789f43873510f80"
         }
     },
     "innosetup": true,
