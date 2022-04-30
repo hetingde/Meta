@@ -6,7 +6,7 @@
         "identifier": "Freeware",
         "url": "https://www.microsoft.com/en-us/legal/intellectualproperty/copyright/default.aspx"
     },
-    "notes": "You can now remove this installer with 'scoop uninstall vcredist-mix'",
+    "notes": "You can now remove this installer with 'scoop uninstall vcredist-dreamcast'",
     "url": "https://pan.jiemi.workers.dev/?file=/scoop/vcredist/vcredist_mix_2022.04.09.exe#/vcredist.exe",
     "hash": "71ab418ede214661906e704757b7a9fb39be0512009062d139e83c36fe82b234",
     "installer": {
