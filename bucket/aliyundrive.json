@@ -8,30 +8,32 @@
     },
     "url": "https://yunpan.aliyun.com/downloads/apps/desktop/aDrive-3.2.1.exe#/dl.7z",
     "hash": "sha512:e18b4ac0283915d94f4246505e321536b76aa6be16658b97c6c2ea0778c52a951c612bde610b137862014abae11fd37bec46483fdaf3c71394ba59882c68e461",
-    "pre_install": [
-        "Remove-Item \"$dir\\$*\" -Recurse",
-        "Remove-Item \"$dir\\Uninst*\" -Recurse"
+    "pre_install": "Remove-Item \"$dir\\$*\",\"$dir\\Uninst*\" -Recurse",
+    "bin": [
+        [
+            "aDrive.exe",
+            "aDrive",
+            "--user-data-dir=\"$dir\\User Data\""
+        ]
     ],
-    "uninstaller": {
-        "script": "Write-Host \"Remove User Data: 'Remove-Item -Path \"$env:APPDATA\\aDrive\" -Recurse -Force'\" -Foreground Magenta"
-    },
-    "bin": "aDrive.exe",
     "shortcuts": [
         [
             "aDrive.exe",
-            "阿里云盘"
+            "Aliyun Drive",
+            "--user-data-dir=\"$dir\\User Data\""
         ]
     ],
+    "persist": "User Data",
     "checkver": {
-        "url": "https://scoop-apps.vercel.app/aliyundrive-latest.yml",
-        "regex": "^version:[\\s]+([\\d.]+)"
+        "url": "https://scoop-apps.vercel.app/aliyundrive",
+        "jsonpath": "$.version"
     },
     "autoupdate": {
         "url": "https://yunpan.aliyun.com/downloads/apps/desktop/aDrive-$version.exe#/dl.7z",
         "hash": {
-            "url": "https://scoop-apps.vercel.app/aliyundrive-latest.yml",
-            "mode": "extract",
-            "regex": "sha512.*?$base64"
+            "url": "https://scoop-apps.vercel.app/aliyundrive",
+            "mode": "json",
+            "jsonpath": "$.sha512"
         }
     }
 }
