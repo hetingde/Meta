@@ -27,9 +27,9 @@
     "autoupdate": {
         "architecture": {
             "64bit": {
-                "url": "https://download.macromedia.com/pub/coldfusion/java/java11/$matchPath/$matchFile",
+                "url": "https://cfdownload.adobe.com/pub/adobe/coldfusion/java/java11/$matchPath/$matchFile",
                 "hash": {
-                    "url": "https://download.macromedia.com/pub/coldfusion/java/java11/$matchPath/jdk$version-checksum.txt",
+                    "url": "https://cfdownload.adobe.com/pub/adobe/coldfusion/java/java11/$matchPath/Checksum_JDk$version.txt",
                     "mode": "extract",
                     "regex": "$basename.*?$sha256"
                 },
