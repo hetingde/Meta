@@ -1,14 +1,14 @@
 {
-    "version": "5.24.1.0",
-    "description": "虎牙直播是一个以游戏直播为主的弹幕式互动直播平台，提供热门游戏直播、电竞赛事直播与游戏赛事直播，手游直播等",
-    "homepage": "https://www.huya.com/",
+    "version": "5.28.1.0",
+    "description": "Huya is a pop-up interactive live streaming platform with a focus on live games.",
+    "homepage": "https://www.huya.com",
     "license": {
         "identifier": "Proprietary",
         "url": "https://hd.huya.com/huyaDIYzt/6811/pc/index.html#diySetTab=4"
     },
     "notes": "We don't persist your data, they are still storaged in \"$env:APPDATA\\HuyaPCLive\".",
-    "url": "https://webcdn.m.qq.com/spcmgr/download/HuyaClientInstall002_5.24.1.0.exe#/dl.7z",
-    "hash": "7597b1886ab8d44f4c6e10f50b1a3013bb40766fde12340cdd5abd530c16e711",
+    "url": "https://download.huya.com/huyapc/install/HuyaClientInstall.exe#/dl.7z",
+    "hash": "f21ffa4938f8b4d8b8694429317702f0d3591f3bba7ecf9b50dc5daa91fcc73b",
     "bin": [
         "huya.exe",
         [
