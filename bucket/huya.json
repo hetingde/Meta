@@ -35,6 +35,6 @@
         "regex": "<dd>([\\d.]+)</dd>"
     },
     "autoupdate": {
-        "url": "https://webcdn.m.qq.com/spcmgr/download/HuyaClientInstall002_$version.exe#/dl.7z"
+        "url": "https://download.huya.com/huyapc/install/HuyaClientInstall.exe#/dl.7z"
     }
 }
