@@ -7,7 +7,7 @@
         "url": "https://www.aliyundrive.com/protocol/service"
     },
     "url": "https://yunpan.aliyun.com/downloads/apps/desktop/aDrive-3.2.1.exe#/dl.7z",
-    "hash": "sha512:e18b4ac0283915d94f4246505e321536b76aa6be16658b97c6c2ea0778c52a951c612bde610b137862014abae11fd37bec46483fdaf3c71394ba59882c68e461",
+    "hash": "sha512:015c665f4f8d652710217da3745293e0eb39a83672487f7f8a54420fd83ba6738cf1dadf395d927d381425dba5b0dfcd60ebfbdc7b150f192d835a13aa4a5392",
     "pre_install": "Remove-Item \"$dir\\$*\",\"$dir\\Uninst*\" -Recurse",
     "bin": [
         [
