@@ -5,7 +5,6 @@
     "license": {
         "identifier": "Freeware"
     },
-    "notes": "We don't persist your apifox data, they are still storaged in '$env:APPDATA\\apifox'.",
     "depends": "sudo",
     "architecture": {
         "64bit": {
@@ -14,7 +13,22 @@
             "pre_install": "Expand-7zipArchive \"$dir\\`$PLUGINSDIR\\app-64.7z\" \"$dir\" -Removal"
         }
     },
+    "hash": "md5:3b5fe217caea4bc397c08206e564e8c4",
+    "pre_install": [
+        "info '[Portable Mode]: Copying user data...'",
+        "if (Test-Path \"$persist_dir\\User Data\\*\") {",
+        "    Copy-Item \"$persist_dir\\User Data\\*\" \"$env:AppData\\apifox\\\" -Recurse -Force | Out-Null",
+        "}"
+    ],
     "post_install": "@('$PLUGINSDIR', '[NSIS].nsi', 'Uninstall Apifox.exe', 'uninstallerIcon.ico') | ForEach-Object { Remove-Item \"$dir\\$_\" -Recurse -Force -ErrorAction SilentlyContinue }",
+    "uninstaller": {
+        "script": [
+            "info '[Portable Mode]: Backing up user data...'",
+            "if (Test-Path \"$env:AppData\\apifox\\*\") {",
+            "    Copy-Item \"$env:AppData\\apifox\\*\" \"$persist_dir\\User Data\\\" -Recurse -Force | Out-Null",
+            "}"
+        ]
+    },
     "bin": "Apifox.exe",
     "shortcuts": [
         [
