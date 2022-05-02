@@ -11,12 +11,24 @@
         "64bit": {
             "url": "http://cdn.apifox.cn/download/2.1.11/Apifox-2.1.11.exe#/installer.exe",
             "hash": "sha512:efea60263a8553876fb7d376ae8b055e8b7fe1150fe7248311a293fda1bf78916a05a6c7ea99af9e2ee690361499cd36fa80047440c60a046c49b771455a6f2f",
+            "pre_install": [
+                "info 'Copying user data...'",
+                "if (Test-Path \"$persist_dir\\User Data\\*\") {",
+                "    Copy-Item \"$persist_dir\\User Data\\*\" \"$env:AppData\\apifox\\\" -Recurse -Force | Out-Null",
+                "}"
+            ],
             "installer": {
                 "script": "Start-Process -filepath \"$dir\\installer.exe\" -WorkingDirectory \"$dir\" -ArgumentList \"/S /D=$dir\" -Wait"
             },
             "post_install": "@('installer.exe', 'uninstallerIcon.ico') | ForEach-Object { Remove-Item \"$dir\\$_\" -Force -ErrorAction SilentlyContinue }",
             "uninstaller": {
-                "script": "Start-Process -filepath \"$dir\\Uninstall Apifox.exe\" -WorkingDirectory \"$dir\" -ArgumentList \"/S\" -Wait"
+                "script": [
+                    "Start-Process -filepath \"$dir\\Uninstall Apifox.exe\" -WorkingDirectory \"$dir\" -ArgumentList \"/S\" -Wait",
+                    "info 'Backing up user data...'",
+                    "if (Test-Path \"$env:AppData\\apifox\\*\") {",
+                    "    Copy-Item \"$env:AppData\\apifox\\*\" \"$persist_dir\\User Data\\\" -Recurse -Force | Out-Null",
+                    "}"
+                ]
             }
         }
     },
