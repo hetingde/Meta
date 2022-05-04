@@ -9,7 +9,7 @@ readme_file="${current_dir}/README.md"
 toc_file="${current_dir}/toc.md"
 table_start="<\!--ts-->"
 table_end="<\!--te-->"
-bucket_repo="https://github.com/Ryanjiena/scoop-apps"
+bucket_repo="https://github.com/Ryanjiena/Meta"
 
 # manifest info generator
 function manifest_info_generator() {

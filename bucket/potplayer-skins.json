@@ -6,8 +6,8 @@
     "suggest": {
         "potplayer": [
             "potplayer",
-            "sapps/potplayer-noad-portable",
-            "sapps/potplayer-dev-noad-portable"
+            "meta/potplayer-noad-portable",
+            "meta/potplayer-dev-noad-portable"
         ]
     },
     "url": "https://pan.jiemi.workers.dev/?file=/scoop/PotPlayer/potplayer-skin-20220319.7z",
@@ -17,7 +17,7 @@
             "function CopyFile([String] $potplayer_file_dest) {",
             "   if (Test-Path \"$(scoop prefix $potplayer_file_dest)\") {",
             "       Get-ChildItem $dir -Exclude install.json,manifest.json | ForEach-Object {",
-            "           Get-ChildItem \"$(scoop prefix $potplayer_file_dest)\\Skins\\$($_.Name)\" -ErrorAction Ignore | Rename-Item -NewName { $_.Name + \".sappsbak\" } -Force",
+            "           Get-ChildItem \"$(scoop prefix $potplayer_file_dest)\\Skins\\$($_.Name)\" -ErrorAction Ignore | Rename-Item -NewName { $_.Name + \".metabak\" } -Force",
             "           Copy-Item $_.FullName -destination \"$(scoop prefix $potplayer_file_dest)\\Skins\"  -Force -ErrorAction Ignore | Out-Null",
             "       }",
             "   }",
@@ -33,7 +33,7 @@
             "  if (Test-Path \"$(scoop prefix $potplayer_file_dest)\") {",
             "    Get-ChildItem \"$dir\" -Exclude install.json,manifest.json | ForEach-Object {",
             "      Remove-Item \"$(scoop prefix $potplayer_file_dest)\\Skins\\$($_.Name)\" -Force -ErrorAction Ignore | Out-Null",
-            "      Get-ChildItem \"$(scoop prefix $potplayer_file_dest)\\Skins\\$($_.Name).sappsbak\" -ErrorAction Ignore | Rename-Item -NewName { $_.Name -replace '.sappsbak','' } -Force -ErrorAction Ignore | Out-Null",
+            "      Get-ChildItem \"$(scoop prefix $potplayer_file_dest)\\Skins\\$($_.Name).metabak\" -ErrorAction Ignore | Rename-Item -NewName { $_.Name -replace '.metabak','' } -Force -ErrorAction Ignore | Out-Null",
             "    }",
             "  }",
             "}",
