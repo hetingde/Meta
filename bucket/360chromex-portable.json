@@ -3,7 +3,8 @@
     "description": "360 Extreme Browser X, Chromium95 kernel.",
     "homepage": "https://browser.360.cn/eex/",
     "license": {
-        "identifier": "Freeware"
+        "identifier": "Proprietary",
+        "url": "http://www.360.cn/xukexieyi.html#jisu"
     },
     "architecture": {
         "64bit": {
@@ -22,7 +23,7 @@
     "shortcuts": [
         [
             "360chromex.exe",
-            "360 Chrome X",
+            "360\\360 Chrome X",
             "--user-data-dir=\"$dir\\User Data\" --disk-cache-dir=\"$dir\\Cache\""
         ]
     ],
