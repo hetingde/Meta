@@ -17,7 +17,7 @@
         "PotPlayer64 初始化 + 基本设置 + DXVA 配置: \"$dir\\potplayer64-settings.reg\""
     ],
     "suggest": {
-        "potplayer-skins": "sapps/potplayer-skins"
+        "potplayer-skins": "meta/potplayer-skins"
     },
     "architecture": {
         "64bit": {

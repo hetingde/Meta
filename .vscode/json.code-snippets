@@ -219,7 +219,7 @@
         "description": "Backup presist"
     },
     "scoop-apps-version": {
-        "prefix": "sapps-version",
+        "prefix": "meta-version",
         "scope": "json,jsonc",
         "body": ["\"https://scoop-apps.vercel.app/$1\","],
         "description": "scoop-apps-version"

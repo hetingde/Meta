@@ -8,12 +8,12 @@
     },
     "depends": [
         "sudo",
-        "sapps/clash",
-        "sapps/clash-premium",
-        "sapps/clash-meta"
+        "meta/clash",
+        "meta/clash-premium",
+        "meta/clash-meta"
     ],
     "suggest": {
-        "dotnet-runtime": "sapps/dotnet-runtime"
+        "dotnet-runtime": "meta/dotnet-runtime"
     },
     "url": "https://github.com/2dust/clashN/releases/download/1.10/clashN.zip",
     "hash": "e64984f1d56498673b1b28965da4402e7917730d1dedb8c11453ef3608b84c7d",

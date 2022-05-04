@@ -9,7 +9,7 @@ readme_file="${current_dir}/README.md"
 toc_file="${current_dir}/toc.md"
 table_start="<\!--ts-->"
 table_end="<\!--te-->"
-bucket_repo="https://github.com/Ryanjiena/scoop-apps"
+bucket_repo="https://github.com/Ryanjiena/Meta"
 
 sysinternals=(accesschk accessenum adexplorer adinsight adrestore autologon autoruns bginfo bluescreen cacheset clockres contig coreinfo ctrl2cap debugview desktops disk2vhd diskext diskmon diskview du efsdump findlinks handle hex2dec junction ldmdump listdlls livekd loadorder logonsessions movefile notmyfault ntfsinfo pagedefrag pendmoves pipelist portmon procdump processexplorer processmonitor psexec psfile psgetsid psinfo pskill pslist psloggedon psloglist pspasswd psping psservice psshutdown pssuspend rammap rdcman regdelnull reghide regjump ru sdelete shareenum shellrunas sigcheck streams strings sync sysmon tcpview vmmap volumeid whois winobj zoomit)
 

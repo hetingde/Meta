@@ -1,6 +1,6 @@
 param(
     # overwrite upstream param
-    [String]$upstream = "Ryanjiena/scoop-apps:master"
+    [String]$upstream = "Ryanjiena/Meta:master"
 )
 
 if (!$env:SCOOP_HOME) { $env:SCOOP_HOME = Resolve-Path (scoop prefix scoop) }

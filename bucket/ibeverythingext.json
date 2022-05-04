@@ -10,8 +10,8 @@
     "depends": "extras/everything",
     "suggest": {
         "vcredist": [
-            "sapps/vcredist-aio",
-            "sapps/vcredist-mix"
+            "meta/vcredist-aio",
+            "meta/vcredist-mix"
         ]
     },
     "architecture": {

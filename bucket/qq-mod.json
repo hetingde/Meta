@@ -22,8 +22,8 @@
     "depends": "sudo",
     "suggest": {
         "vcredist": [
-            "sapps/vcredist-aio",
-            "sapps/vcredist-mix"
+            "meta/vcredist-aio",
+            "meta/vcredist-mix"
         ]
     },
     "url": "https://pan.jiemi.workers.dev/?file=/scoop/QQ/QQ_9.5.9_(28625)_Installer.rar",

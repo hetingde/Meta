@@ -82,21 +82,21 @@ Optional options:
   -Help               Print help to console.
 
 Example:
-  ./bin/branch-push.ps1 -Upstream 'Ryanjiena/Scoop-apps:master' -App 'clash' -PRBranchName 'JaimeZeng/clash' -Push -Request -RepoName 'github.com/Ryanjiena/Scoop-apps' -Base 'master' -AuthToken 'Github PAT'
-  ./bin/branch-push.ps1 -Upstream 'Ryanjiena/Scoop-apps:master' -SpecialSnowflakes 'clash,clashn,...' -PRBranchName 'JaimeZeng/clash' -Push -Request -RepoName 'github.com/Ryanjiena/Scoop-apps' -Base 'master' -AuthToken 'Github PAT'
-  ./bin/branch-push.ps1 -Upstream 'Ryanjiena/Scoop-apps:master' -SpecialSnowflakes 'clash,clashn,...' -PRBranchName 'JaimeZeng/clash' -Push -Request -RepoName 'github.com/Ryanjiena/Scoop-apps' -Base 'master' -Modify -Draft -AuthToken 'Github PAT'
+  ./bin/branch-push.ps1 -Upstream 'Ryanjiena/Meta:master' -App 'clash' -PRBranchName 'JaimeZeng/clash' -Push -Request -RepoName 'github.com/Ryanjiena/Meta' -Base 'master' -AuthToken 'Github PAT'
+  ./bin/branch-push.ps1 -Upstream 'Ryanjiena/Meta:master' -SpecialSnowflakes 'clash,clashn,...' -PRBranchName 'JaimeZeng/clash' -Push -Request -RepoName 'github.com/Ryanjiena/Meta' -Base 'master' -AuthToken 'Github PAT'
+  ./bin/branch-push.ps1 -Upstream 'Ryanjiena/Meta:master' -SpecialSnowflakes 'clash,clashn,...' -PRBranchName 'JaimeZeng/clash' -Push -Request -RepoName 'github.com/Ryanjiena/Meta' -Base 'master' -Modify -Draft -AuthToken 'Github PAT'
 '@
     exit 0
 }
 
-if (!$Upstream) { $Upstream = "Ryanjiena/scoop-apps:master" }
+if (!$Upstream) { $Upstream = "Ryanjiena/Meta:master" }
 if (!$Dir) { $Dir = "$PSScriptRoot/../bucket" }
 if (($App) -and (!$PRBranchName)) { $PRBranchName = "JaimeZeng/$App" }
 if (($Request) -and (!(scoop which gh))) {
     Write-Host "Please install hub 'scoop install gh'" -ForegroundColor Yellow
     exit 1
 }
-if (!$RepoName) { $RepoName = "github.com/Ryanjiena/Scoop-apps" }
+if (!$RepoName) { $RepoName = "github.com/Ryanjiena/Meta" }
 if (!$Base) { $Base = "master" }
 # message
 function abort($msg, [int] $exit_code = 1) { write-host $msg -f red; exit $exit_code }
