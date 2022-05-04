@@ -1,5 +1,5 @@
 {
-    "version": "16.0.11",
+    "version": "16.0.12",
     "description": "Navicat Premium is a database development tool that allows you to simultaneously connect to MySQL, MariaDB, MongoDB, SQL Server, Oracle, PostgreSQL, and SQLite databases from a single application(Chinese Traditional Edition).",
     "homepage": "https://www.navicat.com/en/products/navicat-premium",
     "license": {
@@ -9,11 +9,11 @@
     "architecture": {
         "64bit": {
             "url": "https://dn.navicat.com/download/navicat160_premium_ct_x64.exe",
-            "hash": "53014fa0183c364376508abf1f8666598f742371416f77d56b05a70632b2a429"
+            "hash": "cc38174ab1f3f3e95ba1ae4a43c1c9a18ba710b38a089df3285cac13e79a000e"
         },
         "32bit": {
             "url": "https://dn.navicat.com/download/navicat160_premium_ct_x86.exe",
-            "hash": "b6dc0f53ee99abf9009fe9c82543bde5e163bc085b5ef298cd0e3f0a354b0ff7"
+            "hash": "e6b9040ed70c181a1e213e1af9de041cbd65bd180306925280eb5750be83531a"
         }
     },
     "innosetup": true,
