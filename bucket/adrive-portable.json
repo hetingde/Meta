@@ -1,10 +1,10 @@
 {
     "version": "3.2.1",
-    "description": "Aliyundrive is a fast, non-intrusive, secure enough, easy to share personal network disk.",
+    "description": "aDrive is a fast, non-intrusive, secure and easy-to-share personal netdisk where you can store, manage and explore things, and build a flourishing digital world.",
     "homepage": "https://www.aliyundrive.com/",
     "license": {
         "identifier": "Proprietary",
-        "url": "https://www.aliyundrive.com/protocol/service"
+        "url": "https://terms.alicdn.com/legal-agreement/terms/suit_bu1_dingtalk/suit_bu1_dingtalk202103191654_76478.html"
     },
     "url": "https://yunpan.aliyun.com/downloads/apps/desktop/aDrive-3.2.1.exe#/dl.7z",
     "hash": "sha512:015c665f4f8d652710217da3745293e0eb39a83672487f7f8a54420fd83ba6738cf1dadf395d927d381425dba5b0dfcd60ebfbdc7b150f192d835a13aa4a5392",
@@ -19,7 +19,7 @@
     "shortcuts": [
         [
             "aDrive.exe",
-            "Aliyun Drive",
+            "Alibaba\\Aliyun Drive",
             "--user-data-dir=\"$dir\\User Data\""
         ]
     ],
