@@ -164,8 +164,7 @@ function commit_manifest($App) {
     execute "git add $manifest"
 
     # detect if file was staged, because it's not when only LF or CRLF have changed
-    $status = execute 'git status --porcelain -uno'
-    $status = $status | Where-Object { $_ -match "A\s{2}.*$App.json" }
+    $status = execute 'git status --porcelain -uno $manifest'
 
     # confirm add or update
     if ($status -and $status.StartsWith('A  ') -and $status.EndsWith("$App.json")) {
@@ -182,7 +181,7 @@ execute "git checkout -b $PRBranchName"
 
 # commit one manifest
 if ($App) {
-    . "$PSScriptRoot\checkver.ps1" $App -u -f
+    . "$PSScriptRoot\checkver.ps1" $App -u
     commit_manifest $App
 }
 
@@ -191,7 +190,7 @@ if ($SpecialSnowflakes) {
     Write-Host "Forcing update on our special snowflakes: $($SpecialSnowflakes -join ',')" -ForegroundColor DarkCyan
     $SpecialSnowflakes -split ',' | ForEach-Object {
         $App = "$_"
-        . "$PSScriptRoot\checkver.ps1" $App -u -f
+        . "$PSScriptRoot\checkver.ps1" $App -u
         commit_manifest $App
     }
 }
@@ -209,6 +208,9 @@ if ($Request) {
 
     Write-Host 'Creating pull-request ...' -ForegroundColor DarkCyan
     if ($App) {
+        $manifest = "$Dir/$App.json"
+        $json = parse_json $manifest
+        $version = $json.version
         $PRTitle = "${App}: Add version $version"
     }
 
@@ -225,19 +227,11 @@ if ($Request) {
     # $Owner = $Result.Owner
     # $Repo = $Result.Repo
 
-    $getParams = @(
-        # "--repo $Server/$Owner/$Repo",
-        "--title '$PRTitle'",
-        "--head $PRBranchName",
-        "--base $Base",
-        "--body-file PrBodyFile"
-        "--fill"
-    )
     if (!$Modify) { $Params += "--no-maintainer-edit" }
     if ($Draft) { $Params += "--draft" }
 
-    $Params = ($getParams -join ' ')
-    gh pr create $Params
+    # gh pr create --repo $Server/$Owner/$Repo --title "${PRTitle}" --head $PRBranchName --base $Base --body-file PrBodyFile --fill
+    gh pr create --title "${PRTitle}" --head $PRBranchName --base $Base --body-file PrBodyFile --fill
 
     # clean up
     Remove-Item PrBodyFile -Force
@@ -246,3 +240,4 @@ if ($Request) {
     Write-Output "Y" | gh auth logout --hostname github.com
 }
 
+git checkout -q master
