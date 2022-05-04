@@ -5,7 +5,6 @@
     "license": {
         "identifier": "Freeware"
     },
-    "notes": "We don't persist your apifox data, they are still storaged in '$env:APPDATA\\apifox'.",
     "depends": "sudo",
     "architecture": {
         "64bit": {
