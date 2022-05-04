@@ -11,6 +11,8 @@ table_start="<\!--ts-->"
 table_end="<\!--te-->"
 bucket_repo="https://github.com/Ryanjiena/scoop-apps"
 
+sysinternals=(accesschk accessenum adexplorer adinsight adrestore autologon autoruns bginfo bluescreen cacheset clockres contig coreinfo ctrl2cap debugview desktops disk2vhd diskext diskmon diskview du efsdump findlinks handle hex2dec junction ldmdump listdlls livekd loadorder logonsessions movefile notmyfault ntfsinfo pagedefrag pendmoves pipelist portmon procdump processexplorer processmonitor psexec psfile psgetsid psinfo pskill pslist psloggedon psloglist pspasswd psping psservice psshutdown pssuspend rammap rdcman regdelnull reghide regjump ru sdelete shareenum shellrunas sigcheck streams strings sync sysmon tcpview vmmap volumeid whois winobj zoomit)
+
 # manifest info generator
 function manifest_info_generator() {
     local manifest_file=$(basename "$1")
