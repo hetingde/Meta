@@ -16,7 +16,7 @@
         "64bit": {
             "url": "https://pan.jiemi.workers.dev/?file=/scoop/iyoung/TCCEE_x64_v7.0a(10.00).7z",
             "hash": "6c6dd2520f3feab32159c18df226248f17a9d7b9889f18447d733db32f3273ab",
-            "extract_dir": "TCCEE_x64_v7.0a(10.00)",
+            "extract_dir": "TCCEE",
             "bin": "TOTALCMD64.EXE",
             "shortcuts": [
                 [
@@ -28,7 +28,7 @@
         "32bit": {
             "url": "https://pan.jiemi.workers.dev/?file=/scoop/iyoung/TCCEE_x86_v7.0a(10.00).7z",
             "hash": "3baaead25c46ffdfdb231885393749fdebbc67aacc2d97ab2ebd206562e3d057",
-            "extract_dir": "TCCEE_x86_v7.0a(10.00)",
+            "extract_dir": "TCCEE",
             "bin": "TOTALCMD.EXE",
             "shortcuts": [
                 [
@@ -66,8 +66,7 @@
                     "url": "https://scoop-apps.vercel.app/iyoung",
                     "mode": "extract",
                     "regex": "$sha256//s+$basename"
-                },
-                "extract_dir": "$matchX64"
+                }
             },
             "32bit": {
                 "url": "https://pan.jiemi.workers.dev/?file=/scoop/iyoung/$matchX86.7z",
@@ -75,8 +74,7 @@
                     "url": "https://scoop-apps.vercel.app/iyoung",
                     "mode": "extract",
                     "regex": "$sha256//s+$basename"
-                },
-                "extract_dir": "$matchX86"
+                }
             }
         }
     }
