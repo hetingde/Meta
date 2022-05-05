@@ -1,32 +1,32 @@
 {
-    "version": "2.1",
-    "description": "PsPing. Ping, latency and bandwidth measurement utility",
-    "homepage": "https://docs.microsoft.com/en-us/sysinternals/downloads/psping",
+    "version": "1.4",
+    "description": "PsList. Local and remote process information lister",
+    "homepage": "https://docs.microsoft.com/en-us/sysinternals/downloads/pslist",
     "license": {
         "identifier": "Freeware",
         "url": "https://docs.microsoft.com/en-us/sysinternals/license-terms"
     },
     "architecture": {
         "64bit": {
-            "url": "https://live.sysinternals.com/PsPing64.exe",
-            "hash": "6330fd6b82b3a1c91d2396c1ac096cd2e3775ca50baf8d223fa25a0258361126",
+            "url": "https://live.sysinternals.com/PsList64.exe",
+            "hash": "e6901e8423da3e54bab25f7c90f60d3979bfa5bb61bcc46059662736253b8c72",
             "bin": [
-                "PsPing64.exe",
+                "PsList64.exe",
                 [
-                    "PsPing64.exe",
-                    "PsPing"
+                    "PsList64.exe",
+                    "PsList"
                 ]
             ]
         },
         "32bit": {
-            "url": "https://live.sysinternals.com/PsPing.exe",
-            "hash": "c8453110682d999223a84146462b0b4fc6979f40a01b60a7b925783b71b2d6ff",
-            "bin": "PsPing.exe"
+            "url": "https://live.sysinternals.com/PsList.exe",
+            "hash": "9927831e111ac61fd7645bf7efa1787db1a3e85b6f64a274ca04b213dc27fd08",
+            "bin": "PsList.exe"
         }
     },
     "pre_install": [
         "$sysint = 'HKCU:\\SOFTWARE\\Sysinternals'",
-        "$fin = \"$sysint\\PsPing\"",
+        "$fin = \"$sysint\\PsList\"",
         "New-Item $sysint, $fin -ErrorAction 'SilentlyContinue' | Out-Null",
         "Set-ItemProperty -Path $fin -Name 'EulaAccepted' -Value 1 -Type 'DWord' -Force | Out-Null"
     ],
@@ -34,19 +34,19 @@
         "script": [
             "if ($purge) {",
             "    $sysInt = 'HKCU:\\SOFTWARE\\Sysinternals'",
-            "    Remove-Item \"$sysInt\\PsPing\" -ErrorAction 'SilentlyContinue' -Force -Recurse",
+            "    Remove-Item \"$sysInt\\PsList\" -ErrorAction 'SilentlyContinue' -Force -Recurse",
             "    if ((Get-ChildItem $sysInt).Count -eq 0) { Remove-Item $sysInt -ErrorAction 'SilentlyContinue' -Force -Recurse }",
             "}"
         ]
     },
-    "checkver": "PsPing\\s+v([\\d.]+)</h1",
+    "checkver": "PsList\\s+v([\\d.]+)</h1",
     "autoupdate": {
         "architecture": {
             "64bit": {
-                "url": "https://live.sysinternals.com/PsPing64.exe"
+                "url": "https://live.sysinternals.com/PsList64.exe"
             },
             "32bit": {
-                "url": "https://live.sysinternals.com/PsPing.exe"
+                "url": "https://live.sysinternals.com/PsList.exe"
             }
         }
     }

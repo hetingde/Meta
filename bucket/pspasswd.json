@@ -1,32 +1,32 @@
 {
-    "version": "2.1",
-    "description": "PsPing. Ping, latency and bandwidth measurement utility",
-    "homepage": "https://docs.microsoft.com/en-us/sysinternals/downloads/psping",
+    "version": "1.24",
+    "description": "PsPasswd. Local and remote password changer",
+    "homepage": "https://docs.microsoft.com/en-us/sysinternals/downloads/pspasswd",
     "license": {
         "identifier": "Freeware",
         "url": "https://docs.microsoft.com/en-us/sysinternals/license-terms"
     },
     "architecture": {
         "64bit": {
-            "url": "https://live.sysinternals.com/PsPing64.exe",
-            "hash": "6330fd6b82b3a1c91d2396c1ac096cd2e3775ca50baf8d223fa25a0258361126",
+            "url": "https://live.sysinternals.com/PsPasswd64.exe",
+            "hash": "b5a01628e544929e2dff9f7041359d80f037e1e6da8afb97abd6b2b2f67960c4",
             "bin": [
-                "PsPing64.exe",
+                "PsPasswd64.exe",
                 [
-                    "PsPing64.exe",
-                    "PsPing"
+                    "PsPasswd64.exe",
+                    "PsPasswd"
                 ]
             ]
         },
         "32bit": {
-            "url": "https://live.sysinternals.com/PsPing.exe",
-            "hash": "c8453110682d999223a84146462b0b4fc6979f40a01b60a7b925783b71b2d6ff",
-            "bin": "PsPing.exe"
+            "url": "https://live.sysinternals.com/PsPasswd.exe",
+            "hash": "b2f17ab6396a5e5cd5be12f658c22cdfa2071d377cb8bd0ee76abbf82a9240a7",
+            "bin": "PsPasswd.exe"
         }
     },
     "pre_install": [
         "$sysint = 'HKCU:\\SOFTWARE\\Sysinternals'",
-        "$fin = \"$sysint\\PsPing\"",
+        "$fin = \"$sysint\\PsPasswd\"",
         "New-Item $sysint, $fin -ErrorAction 'SilentlyContinue' | Out-Null",
         "Set-ItemProperty -Path $fin -Name 'EulaAccepted' -Value 1 -Type 'DWord' -Force | Out-Null"
     ],
@@ -34,19 +34,19 @@
         "script": [
             "if ($purge) {",
             "    $sysInt = 'HKCU:\\SOFTWARE\\Sysinternals'",
-            "    Remove-Item \"$sysInt\\PsPing\" -ErrorAction 'SilentlyContinue' -Force -Recurse",
+            "    Remove-Item \"$sysInt\\PsPasswd\" -ErrorAction 'SilentlyContinue' -Force -Recurse",
             "    if ((Get-ChildItem $sysInt).Count -eq 0) { Remove-Item $sysInt -ErrorAction 'SilentlyContinue' -Force -Recurse }",
             "}"
         ]
     },
-    "checkver": "PsPing\\s+v([\\d.]+)</h1",
+    "checkver": "PsPasswd\\s+v([\\d.]+)</h1",
     "autoupdate": {
         "architecture": {
             "64bit": {
-                "url": "https://live.sysinternals.com/PsPing64.exe"
+                "url": "https://live.sysinternals.com/PsPasswd64.exe"
             },
             "32bit": {
-                "url": "https://live.sysinternals.com/PsPing.exe"
+                "url": "https://live.sysinternals.com/PsPasswd.exe"
             }
         }
     }

@@ -1,32 +1,32 @@
 {
-    "version": "2.1",
-    "description": "PsPing. Ping, latency and bandwidth measurement utility",
-    "homepage": "https://docs.microsoft.com/en-us/sysinternals/downloads/psping",
+    "version": "2.25",
+    "description": "PsService. Local and remote service information and configuration utility",
+    "homepage": "https://docs.microsoft.com/en-us/sysinternals/downloads/psservice",
     "license": {
         "identifier": "Freeware",
         "url": "https://docs.microsoft.com/en-us/sysinternals/license-terms"
     },
     "architecture": {
         "64bit": {
-            "url": "https://live.sysinternals.com/PsPing64.exe",
-            "hash": "6330fd6b82b3a1c91d2396c1ac096cd2e3775ca50baf8d223fa25a0258361126",
+            "url": "https://live.sysinternals.com/PsService64.exe",
+            "hash": "6de3137b3088b2c2c311a540f9aaeb57e9fd38259cb18875f2380ee74ec1c7af",
             "bin": [
-                "PsPing64.exe",
+                "PsService64.exe",
                 [
-                    "PsPing64.exe",
-                    "PsPing"
+                    "PsService64.exe",
+                    "PsService"
                 ]
             ]
         },
         "32bit": {
-            "url": "https://live.sysinternals.com/PsPing.exe",
-            "hash": "c8453110682d999223a84146462b0b4fc6979f40a01b60a7b925783b71b2d6ff",
-            "bin": "PsPing.exe"
+            "url": "https://live.sysinternals.com/PsService.exe",
+            "hash": "9454ba56bcb470d330559573afbc10f6989ba46f3e656c20979de6f92e051752",
+            "bin": "PsService.exe"
         }
     },
     "pre_install": [
         "$sysint = 'HKCU:\\SOFTWARE\\Sysinternals'",
-        "$fin = \"$sysint\\PsPing\"",
+        "$fin = \"$sysint\\PsService\"",
         "New-Item $sysint, $fin -ErrorAction 'SilentlyContinue' | Out-Null",
         "Set-ItemProperty -Path $fin -Name 'EulaAccepted' -Value 1 -Type 'DWord' -Force | Out-Null"
     ],
@@ -34,19 +34,19 @@
         "script": [
             "if ($purge) {",
             "    $sysInt = 'HKCU:\\SOFTWARE\\Sysinternals'",
-            "    Remove-Item \"$sysInt\\PsPing\" -ErrorAction 'SilentlyContinue' -Force -Recurse",
+            "    Remove-Item \"$sysInt\\PsService\" -ErrorAction 'SilentlyContinue' -Force -Recurse",
             "    if ((Get-ChildItem $sysInt).Count -eq 0) { Remove-Item $sysInt -ErrorAction 'SilentlyContinue' -Force -Recurse }",
             "}"
         ]
     },
-    "checkver": "PsPing\\s+v([\\d.]+)</h1",
+    "checkver": "PsService\\s+v([\\d.]+)</h1",
     "autoupdate": {
         "architecture": {
             "64bit": {
-                "url": "https://live.sysinternals.com/PsPing64.exe"
+                "url": "https://live.sysinternals.com/PsService64.exe"
             },
             "32bit": {
-                "url": "https://live.sysinternals.com/PsPing.exe"
+                "url": "https://live.sysinternals.com/PsService.exe"
             }
         }
     }
