@@ -11,8 +11,8 @@ scoop update
 # all manifests can be seached with `scoop search`.
 scoop search meta/<app>
 
-# install scoop-completion (scoop tab completion) 
-scoop install scoop-completion 
+# install scoop-completion (scoop tab completion)
+scoop install scoop-completion
 
 # install scoop-search (fast `scoop search`) or scoop-search-multisource(Searches Scoop buckets: local, remote, zip, html)
 scoop install scoop-search scoop-search-multisource
@@ -23,10 +23,12 @@ scoops <app>
 scoop install meta/<app>
 ```
 
-## Manifests / 清单
+## App
+
+-   Sysinternals copied from **[shovel-org/Sysinternals-Bucket](https://github.com/shovel-org/Sysinternals-Bucket)** (The original Manifests have been converted to yaml).
 
 <details>
-<summary>Manifests</summary>
+<summary>App</summary>
 
 <!--ts-->
 <!--te-->
