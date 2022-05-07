@@ -13,10 +13,10 @@
     "uninstaller": {
         "script": "Start-Process \"dir\\!)卸载清除.bat\" -WorkingDirectory \"$dir\" -Wait"
     },
-    "bin": "cloudmusic.exe",
+    "bin": "Cloudmusic .exe",
     "shortcuts": [
         [
-            "cloudmusic.exe",
+            "Cloudmusic .exe",
             "Netease Cloud Music"
         ]
     ],
