@@ -162,62 +162,6 @@
         "body": "\"https://pan.jiemi.workers.dev/?file=/scoop/$1\",",
         "description": "JaimeZeng Onedrive Index"
     },
-    "Copy file or floder": {
-        "prefix": "copy_file",
-        "scope": "json,jsonc",
-        "body": ["\"Copy-Item \\\"$dir\\$1\\\" \\\"$2\\\" -Recurse -Force\","],
-        "description": "Copy file or floder"
-    },
-    "Rename file or floder": {
-        "prefix": "rename_file",
-        "scope": "json,jsonc",
-        "body": ["\"Rename-Item \\\"$dir\\\\$1\\\" \\\"$2\\\" -Force\","],
-        "description": "Rename file or floder"
-    },
-    "Delete file or floder": {
-        "prefix": "remove_file",
-        "scope": "json,jsonc",
-        "body": [
-            "\"@('$1', '$2') | ForEach-Object { Remove-Item \\\"$dir\\\\$_\\\" -Force -ErrorAction SilentlyContinue }\","
-        ],
-        "description": "Delete file or floder"
-    },
-    "start process": {
-        "prefix": "start_process",
-        "scope": "json,jsonc",
-        "body": [
-            "\"Start-Process \\\"dir\\\\$1\\\" -WorkingDirectory \\\"\\$dir\\\" -ArgumentList \\\"$2\\\" -WindowStyle Hidden -Wait\","
-        ],
-        "description": "start process"
-    },
-    "Copy presist": {
-        "prefix": "copy_presist",
-        "scope": "json,jsonc",
-        "body": [
-            "\"info '[Portable Mode]: Copying user data...'\",",
-            "\"if (Test-Path \\\"$persist_dir\\\\$1\\\") {\",",
-            "\"    Copy-Item \\\"$persist_dir\\\\$1\\\" \\\"$dir\\\\\\\" | Out-Null\",",
-            "\"}\",",
-            "\"if (Test-Path \\\"$persist_dir\\\\User Data\\\\*\\\") {\",",
-            "\"    Copy-Item \\\"$persist_dir\\\\User Data\\\\*\\\" \\\"$env:AppData\\\\$2\\\\\\\" -Recurse -Force | Out-Null\",",
-            "\"}\""
-        ],
-        "description": "Copy presist"
-    },
-    "Backup presist": {
-        "prefix": "backup_presist",
-        "scope": "json,jsonc",
-        "body": [
-            "\"info '[Portable Mode]: Backing up user data...'\",",
-            "\"if (Test-Path \\\"$dir\\\\$1\\\") {\",",
-            "\"    Copy-Item \\\"$dir\\\\$1\\\" \\\"$persist_dir\\\\\\\" | Out-Null\",",
-            "\"}\",",
-            "\"if (Test-Path \\\"$env:AppData\\\\$1\\\\*\\\") {\",",
-            "\"    Copy-Item \\\"$env:AppData\\\\$1\\\\*\\\" \\\"$persist_dir\\\\User Data\\\\\\\" -Recurse -Force | Out-Null\",",
-            "\"}\""
-        ],
-        "description": "Backup presist"
-    },
     "scoop-apps-version": {
         "prefix": "meta-version",
         "scope": "json,jsonc",
