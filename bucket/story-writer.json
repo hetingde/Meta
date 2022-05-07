@@ -1,6 +1,6 @@
 {
     "version": "8.9.0",
-    "description": "小书匠, 不仅仅是一款 markdown 篇辑器, 更是一款功能丰富, 强大的知识管理工具",
+    "description": "A feature-rich, powerful knowledge management tool(xiaoshujiang).",
     "homepage": "http://soft.xiaoshujiang.com/",
     "license": {
         "identifier": "Freeware"
