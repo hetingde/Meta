@@ -1,0 +1,19 @@
+name: automerge
+on:
+  workflow_dispatch:
+  # pull_request:
+  #   types:
+  #     - labeled
+jobs:
+  automerge:
+    runs-on: ubuntu-latest
+    steps:
+      - id: automerge
+        name: automerge
+        uses: "pascalgn/automerge-action@v0.15.2"
+        env:
+          GITHUB_TOKEN: "${{ secrets.GH_TOKEN }}"
+          MERGE_LABELS: "review-needed"
+          MERGE_METHOD: "squash"
+          MERGE_FILTER_AUTHOR: "Ryanjiena"
+          BASE_BRANCHES: "master"
